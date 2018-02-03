@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 03, 2018 at 04:57 PM
+-- Generation Time: Feb 03, 2018 at 05:05 PM
 -- Server version: 10.1.16-MariaDB
 -- PHP Version: 5.6.24
 
@@ -43,7 +43,8 @@ CREATE TABLE `account` (
 --
 
 INSERT INTO `account` (`accID`, `name`, `position`, `username`, `password`, `level`, `office`, `status`, `session`) VALUES
-(1, 'Sid', 'Admin', 'sid', 'cua', 1, 'Supply', 1, 0);
+(1, 'Sid', 'Admin', 'sid', 'cua', 1, 'Supply', 1, 0),
+(2, 'Richard', 'Admin', 'richard', 'richard', 1, 'HR', 1, 1);
 
 -- --------------------------------------------------------
 
@@ -133,7 +134,7 @@ ALTER TABLE `stock`
 -- AUTO_INCREMENT for table `account`
 --
 ALTER TABLE `account`
-  MODIFY `accID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `accID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT for table `item`
 --
