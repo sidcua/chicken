@@ -22,7 +22,6 @@ function login(){
 
 			},
 			success: function(data){
-				alert(data);
 				data = $.parseJSON(data);
 				if(data.access == true){
 					if(data.office == "Supply"){
