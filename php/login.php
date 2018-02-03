@@ -12,10 +12,13 @@
 			$_SESSION['accID'] = $fetch['accID'];
 			$_SESSION['name'] = $fetch['name'];
 			$_SESSION['position'] = $fetch['position'];
-			echo json_encode(true);
+			$obj['office'] = $fetch['office'];
+			$obj['access'] = true;
+			echo json_encode($obj);
 		}
 		else{
-			echo json_encode(false);
+			$obj['access'] = false;
+			echo json_encode($obj);
 		}
 	}
 ?>

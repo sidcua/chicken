@@ -22,9 +22,21 @@ function login(){
 
 			},
 			success: function(data){
+				alert(data);
 				data = $.parseJSON(data);
-				if(data){
-					window.location = "supply/";
+				if(data.access == true){
+					if(data.office == "Supply"){
+						window.location = "supply/";
+					}
+					else if(data.office == "HR"){
+						window.location = "hr/";
+					}
+					else if(data.office == "Accounting"){
+						window.location = "accounting";
+					}
+					else if(data.office == "MIS"){
+						window.location == "mis";
+					}
 				}
 				else{
 					$("#errormsglogin").html("<strong>Username and password not found</strong>");
