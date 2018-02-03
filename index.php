@@ -25,18 +25,14 @@
 			<div class="row">
 				<div class="col-sm-2"></div>
 				<div class="col-sm-8">	
-					<div class="card indigo text-center z-depth-2">
-			            <div class="card-body">
-			                <p class="white-text mb-0">Login</p>
-			            </div>
-			        </div>
+					<p class="h1-responsive text-center">Winner Winner Chicken Dinner</p>
 			        <br>
 			        <div class="row">
 			        	<div class="col-sm-2"></div>
 			        	<div class="col-sm-8">
 			        		<p class="error" id="errormsglogin"></p>
 			        		<div class="md-form">
-						        <i class="fa fa-envelope prefix grey-text"></i>
+						        <i class="fa fa-user prefix grey-text"></i>
 						        <input type="text" id="txtusername" class="form-control" onkeydown="if(event.keyCode == 13) login();">
 						        <label for="txtemail">Your email</label>
 						    </div>
