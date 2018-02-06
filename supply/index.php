@@ -1,6 +1,5 @@
 <?php 
 	session_start();
-	// session_destroy();
 ?>
 <!DOCTYPE html>
 <html>
@@ -28,5 +27,4 @@
 	<script type="text/javascript" src="js/mdb/mdb.js"></script>
 	<script type="text/javascript" src="js/mdb/bootstrap.js"></script>
 	<script type="text/javascript" src="js/mdb/popper.min.js"></script>
-	<script type="text/javascript" src="js/login.js"></script>
 </html>
