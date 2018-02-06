@@ -13,6 +13,7 @@
 			$_SESSION['accID'] = $fetch['accID'];
 			$_SESSION['name'] = $fetch['name'];
 			$_SESSION['position'] = $fetch['position'];
+			$obj['nam'] = $fetch['name'];
 			$obj['office'] = $fetch['office'];
 			$obj['access'] = true;
 			echo json_encode($obj);

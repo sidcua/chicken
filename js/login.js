@@ -23,6 +23,8 @@ function login(){
 			},
 			success: function(data){
 				data = $.parseJSON(data);
+				localStorage.setItem('name',data.nam);
+				localStorage.setItem('status','true')
 				if(data.access == true){
 					if(data.office == "Supply"){
 						window.location = "supply/";
@@ -31,10 +33,10 @@ function login(){
 						window.location = "hr/";
 					}
 					else if(data.office == "Accounting"){
-						window.location = "accounting";
+						window.location = "accounting/";
 					}
 					else if(data.office == "MIS"){
-						window.location == "mis";
+						window.location == "mis/";
 					}
 				}
 				else{
