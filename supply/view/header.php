@@ -28,6 +28,17 @@
             <!-- Dropdown -->
 
         </ul>
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <a class="nav-link dropdown-toggle waves-effect waves-light" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-user" aria-hidden="true"></i>
+                    <?php echo $_SESSION['name']; ?>                  
+                </a>
+                <div class="dropdown-menu dropdown-menu-right dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
+                    <a class="dropdown-item waves-effect waves-light" href="">Profile</a>
+                    <a class="dropdown-item waves-effect waves-light" href="php/logout.php">Logout</a>
+                </div>
+            </li>
+        </ul>
         <!-- Links -->
 
         <!-- Search form -->
