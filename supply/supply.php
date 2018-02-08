@@ -139,20 +139,78 @@
 
             <!--Body-->
             <div class="modal-body">
-            	<p class="error" id="errormsgaeditquantity"></p>
+            	<p class="error" id="errormsgeditquantity"></p>
                 <div class="md-form">
 				    <input type="text" id="edittxtname" class="form-control">
 				    <label for="edittxtname" class="">Item name</label>
-				</div>
-				<div class="md-form">
-				    <input type="number" id="edittxtquantity" class="form-control">
-				    <label for="edittxtquantity" class="">Quantity</label>
 				</div>
             </div>
 
             <!--Footer-->
             <div class="modal-footer justify-content-center">
                 <button onclick="edititem()" type="button" class="btn btn-primary-modal">Save</i></button>
+                <button type="button" class="btn btn-outline-secondary-modal waves-effect" data-dismiss="modal">Cancel</button>
+            </div>
+        </div>
+        <!--/.Content-->
+    </div>
+</div>
+<div class="modal fade" id="modalincreasequantity" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-notify modal-info" role="document">
+        <!--Content-->
+        <div class="modal-content">
+            <!--Header-->
+            <div class="modal-header">
+                <p class="heading lead">Increase Item</p>
+
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true" class="white-text">&times;</span>
+                </button>
+            </div>
+
+            <!--Body-->
+            <div class="modal-body">
+            	<p class="error" id="errormsgincreasequantity"></p>
+                <div class="md-form">
+				    <input type="text" id="txtincrease" class="form-control">
+				    <label for="txtincrease" class="">Quantity</label>
+				</div>
+            </div>
+
+            <!--Footer-->
+            <div class="modal-footer justify-content-center">
+                <button onclick="increasequantity()" type="button" class="btn btn-primary-modal">Save</i></button>
+                <button type="button" class="btn btn-outline-secondary-modal waves-effect" data-dismiss="modal">Cancel</button>
+            </div>
+        </div>
+        <!--/.Content-->
+    </div>
+</div>	
+<div class="modal fade" id="modaldecreasequantity" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-notify modal-info" role="document">
+        <!--Content-->
+        <div class="modal-content">
+            <!--Header-->
+            <div class="modal-header">
+                <p class="heading lead">Decrease Quantity</p>
+
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true" class="white-text">&times;</span>
+                </button>
+            </div>
+
+            <!--Body-->
+            <div class="modal-body">
+            	<p class="error" id="errormsgdecreasequantity"></p>
+                <div class="md-form">
+				    <input type="text" id="txtdecrease" class="form-control">
+				    <label for="txtdecrease" class="">Quantity</label>
+				</div>
+            </div>
+
+            <!--Footer-->
+            <div class="modal-footer justify-content-center">
+                <button onclick="decreasequantity()" type="button" class="btn btn-primary-modal">Save</i></button>
                 <button type="button" class="btn btn-outline-secondary-modal waves-effect" data-dismiss="modal">Cancel</button>
             </div>
         </div>
