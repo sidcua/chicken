@@ -3,6 +3,7 @@ $(document).ready(function(){
 	holdaccid();
 	resetmodaladditem();
 	transferitemdetails();
+	resetmodalchangequantity();
 })
 function url(){
 	return "php/supply.php";
@@ -16,6 +17,7 @@ function listitem(){
 			$("#tblitems").html("");
 		},
 		success: function(data){
+			// alert(data);
 			data = $.parseJSON(data);
 			$("#tblitems").html(data);
 		}
@@ -85,34 +87,23 @@ function resetmodaladditem(){
 function transferitemdetails(){
 	$('body').on('click', '.edititem', function(){
 		var name = $(this).closest('tr').find('.name').text();
-		var quantity = $(this).closest('tr').find('.quantity').text();
 		$("#edittxtname").val(name);
-		$("#edittxtquantity").val(quantity);
 		$("[for='edittxtname']").addClass("active");
-		$("[for='edittxtquantity']").addClass("active");
 	});
 }
 function edititem(){
 	var itemid = document.getElementById("itemidholder");
 	var name = document.getElementById("edittxtname");
-	var quantity = document.getElementById("edittxtquantity");
-	if(!name.value.trim() && !quantity.value.trim()){
-		$("#errormsgeditquantity").html('<strong>Input item details</strong>');
-	}
-	else if(!name.value.trim()){
+	if(!name.value.trim()){
 		$("#errormsgeditquantity").html('<strong>Name required</strong>');
-	}
-	else if(!quantity.value.trim()){
-		$("#errormsgeditquantity").html('<strong>Quantity required</strong>');
 	}
 	else{
 		$.ajax({
 			url: url(),
 			method: "post",
-			data: {itemid: itemid.value, name: name.value.trim(), quantity: quantity.value.trim(), action: "edititem"},
+			data: {itemid: itemid.value, name: name.value.trim(), action: "edititem"},
 			beforeSend: function(){
 				$("#tblitems").html("");
-				$("#modaledititem").modal('hide');
 			},
 			success: function(data){
 				data = $.parseJSON(data);
@@ -120,9 +111,69 @@ function edititem(){
 					$("#errormsgeditquantity").html('<strong>Name already existed</strong>');
 				}
 				else{
+					$("#modaledititem").modal('hide');
 					listitem();
 				}
 			}
 		})
 	}
 }		
+function increasequantity(){
+	var itemid = document.getElementById("itemidholder");
+	var quantity = document.getElementById("txtincrease");
+	if(!quantity.value.trim()){
+		$("#errormsgincreasequantity").html('<strong>Input Quantity</strong>');
+	}
+	else{
+		$.ajax({
+			url: url(),
+			method: "post",
+			data: {itemid: itemid.value, quantity: quantity.value, action: "increasequantity"},
+			beforeSend: function(){
+				$("#tblitems").html("");
+				$("#modalincreasequantity").modal('hide');
+			},
+			success: function(data){
+				listitem();
+			}
+		})
+	}
+}
+function decreasequantity(){
+	var itemid = document.getElementById("itemidholder");
+	var quantity = document.getElementById("txtdecrease");
+	if(!quantity.value.trim()){
+		$("#errormsgdecreasequantity").html('<strong>Input Quantity</strong>');
+	}
+	else{
+		$.ajax({
+			url: url(),
+			method: "post",
+			data: {itemid: itemid.value, quantity: quantity.value, action: "decreasequantity"},
+			beforeSend: function(){
+			},
+			success: function(data){
+				data = $.parseJSON(data);
+				if(!data){
+					$("#errormsgdecreasequantity").html('<strong>Supply is not enough</strong>');
+				}
+				else{
+					$("#modaldecreasequantity").modal('hide');
+					listitem();
+				}
+			}
+		})
+	}
+}
+function resetmodalchangequantity(){
+	$("#modalincreasequantity").on("hidden.bs.modal", function(){
+		$("#errormsgincreasequantity").html("");
+		$("#txtincrease").val("");
+		$("[for='txtincrease'").removeClass("active");
+	})
+	$("#modaldecreasequantity").on("hidden.bs.modal", function(){
+		$("#errormsgdecreasequantity").html("");
+		$("#txtdecrease").val("");
+		$("[for='txtdecrease'").removeClass("active");
+	})
+}
