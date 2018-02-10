@@ -1,6 +1,6 @@
 <?php
     session_start();
-    include '../php/connect.php';
+    include '../../php/connect.php';
 
    
     $sql = "SELECT * FROM account";
@@ -12,9 +12,7 @@
         $send[$counter]["nam"] = $row["name"];
         $send[$counter]["position"] = $row["position"];
         $send[$counter]["username"] = $row["username"];
-        $send[$counter]["level"] = $row["level"];
         $send[$counter]["office"] = $row["office"];
-        $send[$counter]["stats"] = $row["status"];
         $counter+= 1;
        }
 }
