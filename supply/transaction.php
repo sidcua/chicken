@@ -28,9 +28,12 @@
 			<div class="divspace"></div>
 			<div class="row">
 				<div class="col-sm-12">
-					<div class="d-flex flex-row-reverse">
+					<div class="d-flex justify-content-between">
+						<div>
+							<p id="totaltransaction" class="h4-responsive"></p>
+						</div>
 						<div class="md-form">
-							<button type="button" data-toggle="modal" data-target="#modaladditem" class="btn btn-danger"><i class="fa fa-trash-o" aria-hidden="true"></i> Clear Transaction</button>
+							<button type="button" data-toggle="modal" data-target="#modalcleartransaction" class="btn btn-danger"><i class="fa fa-trash-o" aria-hidden="true"></i> Clear Transaction</button>
 						</div>
 					</div>
 				</div>
@@ -42,12 +45,12 @@
 						    <thead class="blue-grey lighten-4">
 						        <tr>
 						            <th>Item name</th>
-						            <th>Quantity</th>
+						            <th>Transaction</th>
 						            <th>Action</th>
 						        </tr>
 						    </thead>
 						    <input type="hidden" id="itemidholder" value="" />
-						    <tbody id="tblitems"> 
+						    <tbody id="tbltransaction"> 
 						    </tbody>
 						</table>
 					</div>
@@ -81,7 +84,7 @@
 
             <!--Footer-->
             <div class="modal-footer flex-center">
-                <button onclick="deleteitem()" class="btn  btn-outline-secondary-modal">Yes</button>
+                <button onclick="cleartransaction()" class="btn  btn-outline-secondary-modal">Yes</button>
                 <button type="button" class="btn  btn-primary-modal waves-effect" data-dismiss="modal">No</button>
             </div>
         </div>
