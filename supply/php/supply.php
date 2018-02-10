@@ -2,6 +2,10 @@
 	session_start();
 	include 'connect.php';
 	$action = $_POST['action'];
+	function trans($name, $transaction, $remark, $con){
+		$query = "INSERT INTO stock (item, transaction, remark) VALUES ('$name', '$transaction', '$remark')";
+		mysqli_query($con, $query);
+	}
 	if($action == "listitem"){
 		$output = "";
 		$query = "SELECT * FROM item ORDER BY name ASC";
@@ -39,13 +43,19 @@
 		else{
 			$query = "INSERT INTO item (name, price, quantity) VALUES ('$name', '$price', '$quantity')";
 			mysqli_query($con, $query);
+			trans($name, $quantity, "New Stock", $con);
 			echo json_encode(true);
 		}
 	}
 	if($action == "deleteitem"){
 		$itemid = mysqli_escape_string($con, $_POST['itemid']);
+		$query = "SELECT name FROM item WHERE itemID = '$itemid'";
+		$result = mysqli_query($con, $query);
+		$fetch = mysqli_fetch_assoc($result);
+		$name = $fetch['name'];
 		$query = "DELETE FROM item WHERE itemID = '$itemid'";
 		mysqli_query($con, $query);
+		trans($name, "", "Remove Stock", $con);
 	}
 	if($action == "edititem"){
 		$itemid = mysqli_escape_string($con, $_POST['itemid']);
@@ -59,27 +69,33 @@
 		else{
 			$query = "UPDATE item SET name = '$name', price = '$price' WHERE itemID = '$itemid'";
 			mysqli_query($con, $query);
+			trans($name, $price, "Edit Stock", $con);
 			echo json_encode(true);
 		}
 	}
 	if($action == "increasequantity"){
 		$itemid = mysqli_escape_string($con, $_POST['itemid']);
 		$quantity = mysqli_escape_string($con, $_POST['quantity']);
-		$query = "SELECT quantity FROM item WHERE itemID = '$itemid'";
+		$change = $quantity;
+		$query = "SELECT name, quantity FROM item WHERE itemID = '$itemid'";
 		$result = mysqli_query($con, $query);
 		$fetch = mysqli_fetch_assoc($result);
 		$oldquantity = $fetch['quantity'];
+		$name = $fetch['name'];
 		$quantity = $quantity + $oldquantity;
 		$query = "UPDATE item SET quantity = '$quantity' WHERE itemID = '$itemid'";
 		mysqli_query($con, $query);
+		trans($name, $change, "Stock-In", $con);
 	}
 	if($action == "decreasequantity"){
 		$itemid = mysqli_escape_string($con, $_POST['itemid']);
 		$quantity = mysqli_escape_string($con, $_POST['quantity']);
-		$query = "SELECT quantity FROM item WHERE itemID = '$itemid'";
+		$change = $quantity;
+		$query = "SELECT name, quantity FROM item WHERE itemID = '$itemid'";
 		$result = mysqli_query($con, $query);
 		$fetch = mysqli_fetch_assoc($result);
 		$oldquantity = $fetch['quantity'];
+		$name = $fetch['name'];
 		if($oldquantity < $quantity){
 			echo json_encode(false);
 		}
@@ -87,6 +103,7 @@
 			$quantity = $oldquantity - $quantity;
 			$query = "UPDATE item SET quantity = '$quantity' WHERE itemID = '$itemid'";
 			mysqli_query($con, $query);
+			trans($name, $change, "Stock-Out", $con);
 			echo json_encode(true);
 		}
 	}
