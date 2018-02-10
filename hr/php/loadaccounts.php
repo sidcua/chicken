@@ -9,6 +9,7 @@
     if ($result->num_rows > 0) {
     // output data rows
         while($row = $result->fetch_assoc()) {
+        $send[$counter]["idacc"] = $row["accID"];            
         $send[$counter]["nam"] = $row["name"];
         $send[$counter]["position"] = $row["position"];
         $send[$counter]["username"] = $row["username"];

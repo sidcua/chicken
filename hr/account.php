@@ -37,6 +37,8 @@
                         </button>
                     </div>
                     <!--Body-->
+            <form method="post" id="editEmpForm" enctype="multipart/form-data">
+
                     <div class="modal-body mb-0">
 
                     <div class="md-form form-sm">
@@ -55,24 +57,6 @@
                     </datalist>
                 </div>
 
-                <div class="md-form form-sm">
-                    <i class="fa fa-envelope prefix"></i>
-                    <input type="text" name="eusername" id="eusername" class="form-control">
-                    <label for="eusername">Username</label>
-                </div>
-
-                <div class="md-form form-sm">
-                    <i class="fa fa-lock prefix"></i>
-                    <input type="password" name="epassword" id="epassword" class="form-control" maxlength = "20" minlength = "8">
-                    <label for="epassword">Password</label>
-                </div>
-
-                <div class="md-form form-sm">
-                    <i class="fa fa-lock prefix"></i>
-                    <input type="password" name="ecpassword" id="ecpassword" class="form-control" maxlength = "20" minlength = "8">
-                    <label for="ecpassword">Confirm password</label>
-                </div>
-
             <div class="md-form form-sm">
                     <i class="fa fa-envelope prefix"></i>
                     <input type="text" name="eoffice" id="eoffice" class="form-control" list="eoffList">
@@ -85,11 +69,12 @@
                 </div>
 
                 <div class="text-center mt-1-half">
-                    <button class="btn btn-info mb-1" name="saveEdit" >Save<i class="fa fa-check ml-1"></i></button>
+                    <button class="btn btn-info mb-1" name="saveEdit" ng-click="accEdit();" >Save<i class="fa fa-check ml-1"></i></button>
                 </div>
 
             </div>
         </div>
+     </form>
         <!--/.Content-->
     </div>
   </div>
@@ -138,18 +123,16 @@
 
                         <div class="md-form form-sm">
                             <i class="fa fa-lock prefix"></i>
-                            <input type="password" name="password" id="password" class="form-control" maxlength = "20" minlength = "8">
+                            <input type="password" name="password" id="password" class="form-control" maxlength = "20" minlength = "6">
                             <label for="password">Password</label>
                         </div>
         
                         <div class="md-form form-sm">
                             <i class="fa fa-lock prefix"></i>
-                            <input type="password" name="cpassword" id="cpassword" class="form-control" maxlength = "20" minlength = "8">
+                            <input type="password" name="cpassword" id="cpassword" class="form-control" maxlength = "20" minlength = "6">
                             <label for="cpassword">Confirm password</label>
                         </div>
         
-    
-
                     <div class="md-form form-sm">
                             <i class="fa fa-envelope prefix"></i>
                             <input type="text" name="office" id="office" class="form-control" list="offList">
@@ -186,31 +169,29 @@
                 </button>
             </div>
             <!--Body-->
-            <div class="modal-body mb-0">
-                <div class="md-form form-sm">
-                    <i class="fa fa-envelope prefix"></i>
-                    <input type="text" id="form19" class="form-control">
-                    <label for="form19">Name of Employee</label>
-                </div>
+            <form method="post" id="removeEmpForm" enctype="multipart/form-data">
 
-                <div class="md-form form-sm">
-                    <i class="fa fa-tag prefix"></i>
-                    <input type="text" id="form21" class="form-control">
-                    <label for="form21">Date</label>
-                </div>
+                <div class="modal-body mb-0">
+                    <div class="md-form form-sm">
+                        <i class="fa fa-envelope prefix"></i>
+                        <input type="text" id="empname" name="empname" class="form-control">
+                        <label for="empname">Name of Employee</label>
+                    </div>
 
-                <div class="md-form form-sm">
-                    <i class="fa fa-pencil prefix"></i>
-                    <textarea type="text" id="form8" class="md-textarea mb-0"></textarea>
-                    <label for="form8">Reason of removal</label>
-                </div>
 
-                <div class="text-center mt-1-half">
-                    <button class="btn btn-info mb-2" data-toggle="modal" data-target="#modalConfirmRem" >Remove<i class="fa fa-send ml-1"></i></button>
-                </div>
+                    <div class="md-form form-sm">
+                        <i class="fa fa-pencil prefix"></i>
+                        <textarea type="text" id="reason" name="reason" class="md-textarea mb-0"></textarea>
+                        <label for="reason">Reason of removal</label>
+                    </div>
 
+                    <div class="text-center mt-1-half">
+                        <button class="btn btn-info mb-2" data-toggle="modal" data-target="#modalConfirmRem">Remove<i class="fa fa-send ml-1"></i></button>
+                    </div>
+
+                </div>
             </div>
-        </div>
+        </form>
         <!--/.Content-->
     </div>
 </div>
@@ -236,7 +217,7 @@
 
                 <!--Footer-->
                 <div class="modal-footer flex-center">
-                    <button class="btn btn-outline-secondary-modal">Yes</button>
+                    <button class="btn btn-outline-secondary-modal" ng-click="accRem();">Yes</button>
                     <button type="button" class="btn  btn-primary-modal waves-effect" data-dismiss="modal">No</button>
                 </div>
             </div>
@@ -288,6 +269,7 @@
                             
                         </tr>
                     </thead>
+                    <!-- <input type="hidden" id="taccount" name="taccount" value="" /> -->
                     <tbody class="tableacc" id="table">
                         <tr id="accounts">
                         </tr>
@@ -299,7 +281,7 @@
     <div class="position-fixed">
    
     <button class="btn btn-primary" type="button" data-toggle="modal" data-target="#modalReg" ><i class="fa fa-plus" aria-hidden="true"></i> Add an employee</button>
-    <button class="btn btn-primary" ng-click="delete();">clear </button>
+    <button class="btn btn-primary" ng-click="clearSearch();">clear </button>
 
     </div>
 
@@ -332,6 +314,6 @@
 	<script type="text/javascript" src="js/mdb/mdb.js"></script>
 	<script type="text/javascript" src="js/mdb/bootstrap.js"></script>
 	<script type="text/javascript" src="js/mdb/popper.min.js"></script>
-
+   
 </body>
 </html>

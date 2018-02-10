@@ -2,7 +2,7 @@
     session_start();
     include '../../php/connect.php';
 
-header('Content-type: application/json'); 
+    header('Content-type: application/json'); 
 
     
     // if(isset($_POST['addEmp'])){
@@ -29,15 +29,16 @@ header('Content-type: application/json');
                 $rows = mysqli_num_rows($query);
 
                 if($rows == 0){
-                    
+                     if(strlen($password) >= 6){
                     if($_POST['password']==$_POST['cpassword']){
                     
                         
                         mysqli_query($con, "INSERT INTO account(name,position,username,password,office) VALUES('$fname','$position','$username','$password','$office')"); 
                         $send['match'] = true;
                         $send['exist'] = true;
+                        $send['leng'] = true;
                         $send['titles'] = "Employee/Account Added";
-                        $send['message'] = "Thank you for adding an Employee in " . $_POST['office'] . "Office!";
+                        $send['message'] = "Thank you for adding an Employee in " . $_POST['office'] . " Office!";
                         $send['check'] = true;
                         echo json_encode($send);
                         // header('Refresh:4; url=./hr');
@@ -53,12 +54,19 @@ header('Content-type: application/json');
                     }
                 
             }else{
-                $send['titles'] = "Existing Username!";
-                $send['message'] = "Sorry, Username is already existing";
-                $send['exist'] = false;
-                echo json_encode($send);
+                $error['titles'] = "Password length is too short!";
+                $error['message'] = "Please enter more than 6 characters.";
+                $error['leng'] = false;
+                echo json_encode($error);
+               
                 // echo '<script>alert("username is already existing!")</script>';
             }
+        }else{
+            $send['titles'] = "Existing Username!";
+            $send['message'] = "Sorry, Username is already existing";
+            $send['exist'] = false;
+            echo json_encode($send);
+        }
         }else{
             $send['titles'] = "Non-Alpha Numeric!";
             $send['message'] = "Username only contains Alpha Nuemeric!";
