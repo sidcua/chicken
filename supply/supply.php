@@ -42,6 +42,7 @@
 						    <thead class="blue-grey lighten-4">
 						        <tr>
 						            <th>Item name</th>
+                                    <th>Price</th>
 						            <th>Quantity</th>
 						            <th>Action</th>
 						        </tr>
@@ -50,7 +51,6 @@
 						    <tbody id="tblitems"> 
 						    </tbody>
 						</table>
-						
 					</div>
 				</div>
 			</div>
@@ -109,6 +109,10 @@
 				    <input type="text" id="txtname" class="form-control">
 				    <label for="txtname" class="">Item name</label>
 				</div>
+                <div class="md-form">
+                    <input type="number" id="txtprice" class="form-control">
+                    <label for="txtprice" class="">Price</label>
+                </div>
 				<div class="md-form">
 				    <input type="number" id="txtquantity" class="form-control">
 				    <label for="txtquantity" class="">Quantity</label>
@@ -144,6 +148,10 @@
 				    <input type="text" id="edittxtname" class="form-control">
 				    <label for="edittxtname" class="">Item name</label>
 				</div>
+                <div class="md-form">
+                    <input type="number" id="edittxtprice" class="form-control">
+                    <label for="edittxtprice" class="">Price</label>
+                </div>
             </div>
 
             <!--Footer-->

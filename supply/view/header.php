@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-lg navbar-dark indigo">
 
     <!-- Navbar brand -->
-    <a class="navbar-brand" href="#">Supply</a>
+    <a class="navbar-brand" href="/chicken/supply/">Supply</a>
 
     <!-- Collapse button -->
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"

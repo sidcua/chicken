@@ -31,11 +31,15 @@ function holdaccid(){
 function additem(){
 	var name = document.getElementById("txtname");
 	var quantity = document.getElementById("txtquantity");
+	var price = document.getElementById("txtprice");
 	if(!name.value.trim() && !quantity.value.trim()){
 		$("#errormsgaddquantity").html('<strong>Input item details</strong>');
 	}
 	else if(!name.value.trim()){
 		$("#errormsgaddquantity").html('<strong>Name required</strong>');
+	}
+	else if(!price.value.trim()){
+		$("#errormsgaddquantity").html('<strong>Price required</strong>');
 	}
 	else if(!quantity.value.trim()){
 		$("#errormsgaddquantity").html('<strong>Quantity required</strong>');
@@ -44,7 +48,7 @@ function additem(){
 		$.ajax({
 			url: url(),
 			method: "post",
-			data: {name: name.value.trim(), quantity: quantity.value, action: "additem"},
+			data: {name: name.value.trim(), price: price.value.trim(), quantity: quantity.value, action: "additem"},
 			beforeSend: function(){
 				$("#tblitems").html("");
 				$("#modaladditem").modal('hide');
@@ -80,28 +84,37 @@ function resetmodaladditem(){
 	$("#modaladditem").on('hidden.bs.modal', function(){
 		$("#txtname").val("");
 		$("#txtquantity").val("");
+		$("#txtprice").val("");
 		$("[for='txtname']").removeClass("active");
 		$("[for='txtquantity']").removeClass("active");
+		$("[for='txtprice']").removeClass("active");
 	})
 }
 function transferitemdetails(){
 	$('body').on('click', '.edititem', function(){
 		var name = $(this).closest('tr').find('.name').text();
+		var price = $(this).closest('tr').find('.price').text();
 		$("#edittxtname").val(name);
+		$("#edittxtprice").val(price);
 		$("[for='edittxtname']").addClass("active");
+		$("[for='edittxtprice']").addClass("active");
 	});
 }
 function edititem(){
 	var itemid = document.getElementById("itemidholder");
 	var name = document.getElementById("edittxtname");
+	var price = document.getElementById("edittxtprice");
 	if(!name.value.trim()){
 		$("#errormsgeditquantity").html('<strong>Name required</strong>');
+	}
+	else if(!price.value.trim()){
+		$("#errormsgeditquantity").html('<strong>Price required</strong>');		
 	}
 	else{
 		$.ajax({
 			url: url(),
 			method: "post",
-			data: {itemid: itemid.value, name: name.value.trim(), action: "edititem"},
+			data: {itemid: itemid.value, price: price.value.trim(), name: name.value.trim(), action: "edititem"},
 			beforeSend: function(){
 				$("#tblitems").html("");
 			},
