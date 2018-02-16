@@ -1,5 +1,6 @@
 <?php 
 	session_start();
+	include 'php/checksession.php';
 ?>
 <!DOCTYPE html>
 <html>
@@ -46,7 +47,7 @@
 						        <tr>
 						            <th>Item name</th>
 						            <th>Transaction</th>
-						            <th>Action</th>
+						            <th>Remark</th>
 						        </tr>
 						    </thead>
 						    <input type="hidden" id="itemidholder" value="" />

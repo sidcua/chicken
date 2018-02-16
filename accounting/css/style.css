@@ -1,0 +1,16 @@
+.divspace{
+	margin-top: 50px;
+	margin-bottom: 50px;
+}
+p.error {
+	text-align: center;
+	color: red;
+	font-size: 15px;
+	font-family: roboto;
+}
+.table-wrapper-2 {
+    display: block;
+    max-height: 300px;
+    overflow-y: auto;
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+}

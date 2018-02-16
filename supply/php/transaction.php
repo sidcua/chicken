@@ -18,9 +18,9 @@
 				$remark = $fetch['remark'];
 				$output .=
 				'<tr>
-					<td>'.$item.'</td>
+					<td width="30%">'.$item.'</td>
 					<td>'.$transaction.'</td>
-					<td>'.$remark.'</td>
+					<td width="40%">'.$remark.'</td>
 				</tr>';
 			}
 		}

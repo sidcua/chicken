@@ -22,10 +22,10 @@
 				$quantity = $fetch['quantity'];
 				$output .= 
 				'<tr data-id="'.$itemid.'">
-					<td class="name">'.$name.'</td>
+					<td width="30%" class="name">'.$name.'</td>
 					<td class="price">'.$price.'</td>
 					<td class="quantity">'.$quantity.'</td>
-					<td><a><span data-toggle="modal" data-target="#modalincreasequantity" class="badge badge-default"><i class="fa fa-plus fa-2x" aria-hidden="true"></i></span></a> <a><span data-toggle="modal" data-target="#modaldecreasequantity" class="badge badge-default"><i class="fa fa-minus fa-2x" aria-hidden="true"></i></span></a> <a><span data-toggle="modal" data-target="#modaledititem" class="badge badge-warning edititem"><i class="fa fa-pencil fa-2x" aria-hidden="true"></i></span></a> <a><span data-toggle="modal" data-target="#modaldeleteitem" class="badge badge-danger"><i class="fa fa-trash-o fa-2x" aria-hidden="true"></i></span></a></td>
+					<td width="20%"><a><span data-toggle="modal" data-target="#modalincreasequantity" class="badge badge-default"><i class="fa fa-plus fa-2x" aria-hidden="true"></i></span></a> <a><span data-toggle="modal" data-target="#modaldecreasequantity" class="badge badge-default"><i class="fa fa-minus fa-2x" aria-hidden="true"></i></span></a> <a><span data-toggle="modal" data-target="#modaledititem" class="badge badge-warning edititem"><i class="fa fa-pencil fa-2x" aria-hidden="true"></i></span></a> <a><span data-toggle="modal" data-target="#modaldeleteitem" class="badge badge-danger"><i class="fa fa-trash-o fa-2x" aria-hidden="true"></i></span></a></td>
 				</tr>';
 			}
 		}

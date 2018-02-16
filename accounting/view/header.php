@@ -1,7 +1,7 @@
-<nav class="navbar navbar-expand-lg navbar-dark indigo">
+<nav class="navbar navbar-expand-lg navbar-dark red">
 
     <!-- Navbar brand -->
-    <a class="navbar-brand" href="/chicken/supply/">Supply</a>
+    <a class="navbar-brand" href="/chicken/accounting/">Accounting</a>
 
     <!-- Collapse button -->
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
@@ -16,13 +16,7 @@
                 <a class="nav-link" href=".">Home<span class="sr-only"></span></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="./supply.php">Supply</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="./distribute.php">Distribute</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="./transaction.php">Transaction</a>
+                <a class="nav-link" href="expense.php">Expense</a>
             </li>
 
             <!-- Dropdown -->
