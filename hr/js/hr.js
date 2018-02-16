@@ -7,13 +7,15 @@
     var fname = "";
     var username = "";
     var app = angular.module("appHR",[]);
-
+    var id = "";
     app.controller("ctrlHR", function($scope,$compile){
 
         $scope.modFname = "";        
         $scope.modPosition = "";
         $scope.modOffice = "";
         $scope.person = [];
+        $scope.employee = [];
+        
         $scope.offices = [
             { label: "All" , value: ""},
             { label: "Accounting" , value: "Accounting"},
@@ -166,6 +168,9 @@
         });
 
         }
+            function deleteID(id){
+                
+            }
 
          
         // $scope.remove = function(){
@@ -212,8 +217,30 @@
                 }
             });
         }
+        $scope.deleteEmpHist = function(id){
+            var formData = new FormData();
+            formData.append('id',id);
+            $.ajax({
+                url: './php/clearEmpHistory.php',
+                dataType: 'JSON',
+                type: 'POST',
+                data: formData,
+                contentType: false,
+                processData: false,
+                success: function(data){
+                    $scope.refresh();
+                    $('#modalConfirmClear').modal('hide');
+                    $scope.$apply();
+                    messageBox(data.titles,data.message,true); 
+            },
+                error: function(a, b, c){
+                    console.log("error: " + a + b + c);
+                }
+            });
+        }
         // data-id='"+ data[x].idacc +"'
         $scope.refresh = function(){
+            $('#tables').children('.sname').remove();
             if(localStorage.getItem('status') == 'true'){
                 $('#pname').text(localStorage.getItem('name'));
                 $.ajax({
@@ -229,9 +256,19 @@
                             username: data[x].username,
                             office: data[x].office
                         }
+                        if(data[x].idhist){
+                            $('#empHistory').after($compile(
+                                "<tr class='sname'>"+
+                                "<td> " + data[x].nam2 + "</td> "+
+                                "<td> " + data[x].reason + " </td>"+
+                                "<td> " + data[x].date + " </td>"+
+                                "<td><a><span ng-click='deleteEmpHist("+ data[x].idhist +");' data-toggle='modal' data-target='#modalConfirmClear' class='badge badge-danger'><i class='fa fa-trash-o fa-2x' aria-hidden='true'></i></span></a></td>"+
+                            "</tr> "
+                            )($scope));
+                        }
                          $scope.accounts.push(info);
                     }
-                    $scope.$apply();
+                    $scope.$digest();
                 },
                     error: function(a, b, c){
                         console.log("error: " + a + b + c);

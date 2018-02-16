@@ -17,10 +17,10 @@
                 <a class="nav-link" href="./">Home <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="./account.php">Accounts</a>
+                <a class="nav-link" href="./account.php">Employee</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="./staff.php">Staffs</a>
+                <a class="nav-link" href="./emphistory.php">Employee History</a>
             </li>
 
             <!-- Dropdown -->
