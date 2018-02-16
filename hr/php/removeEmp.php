@@ -4,7 +4,7 @@
 
     header('Content-type: application/json'); 
 
-    $username = $_POST['username'];
+    $username = trim($_POST['username']);
 
     date_default_timezone_set('Asia/Manila');
     $ename = $_POST['empname'];

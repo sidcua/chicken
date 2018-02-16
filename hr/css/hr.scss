@@ -1,6 +1,6 @@
 .btn{
-    margin:auto;
     display:block;
+    position:initial;
 }
 #delbtn{
     margin: auto;
@@ -18,4 +18,11 @@
     max-height: 350px;
     overflow-y: auto;
     -ms-overflow-style: -ms-autohiding-scrollbar;
+}
+
+.amoyagane{
+    color: red;
+}
+body{
+    overflow-x: hidden;
 }

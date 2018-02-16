@@ -14,6 +14,8 @@
 <body ng-app="appHR" ng-controller="ctrlHR" ng-init="refresh();">
                    
     <?php include './view/header.php'; ?>
+
+    <?php include './view/footer.php'; ?>
    
 
     <script type="text/javascript" src="js/mdb/jquery-3.2.1.min.js"></script>

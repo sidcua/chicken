@@ -4,11 +4,24 @@
 
 (function(){
     'use strict';
+    var fname = "";
+    var username = "";
     var app = angular.module("appHR",[]);
 
     app.controller("ctrlHR", function($scope,$compile){
 
-        var username = "";
+        $scope.modFname = "";        
+        $scope.modPosition = "";
+        $scope.modOffice = "";
+        $scope.person = [];
+        $scope.offices = [
+            { label: "All" , value: ""},
+            { label: "Accounting" , value: "Accounting"},
+            { label: "Supply" , value: "Supply"},
+            { label: "HR" , value: "HR"},
+        ];
+        $('#searchOff option:first').text("All");
+        
         //Modal MessageBox
 
         // $(document).ready(function(){
@@ -32,7 +45,6 @@
             $("[for='office']").removeClass("active");
         }
 
-        
         function removeClear() {
             document.getElementById('removeEmpForm').reset();
             $("[for='empname']").removeClass("active");
@@ -44,6 +56,14 @@
             $("[for='efname']").removeClass("active");
             $("[for='eposition']").removeClass("active");
             $("[for='eoffice']").removeClass("active");
+        }
+
+        function editClear2() {
+            // document.getElementById('editEmpForm').reset();
+            $("label[for='efname']").addClass("active");
+            $("label[for='eposition']").addClass("active");
+            $("label[for='eoffice']").addClass("active");
+            $("label[for='empname']").addClass("active");
         }
 
         // function holdaccid(){
@@ -77,6 +97,9 @@
                     $('#modalRem').modal('hide');
                     $('#modalConfirmRem').modal('hide');
                     removeClear();
+                    $scope.clearTable();
+                    $scope.refresh();
+                    // $scope.$apply();
                 },
                 error: function(a,b,c){
                     console.log('Error: ' + a + " " + b + " " + c);
@@ -111,13 +134,40 @@
         $scope.removeAcc = function($event){
             username = angular.element($event.currentTarget).parent().parent().parent().find("span").text();
             console.log(username);
+            Autofill(username);
+           
                 }
 
         $scope.editAcc = function($event){
             username = angular.element($event.currentTarget).parent().parent().parent().find("span").text();
             console.log(username);
-                }
+            Autofill(username);
+           
+    }
+        function Autofill(username){
+            editClear2();
+            $.ajax({
+                url:'./php/autofill.php',
+                dataType: 'JSON',
+                type: 'POST',
+                data: "username=" + username, 
+                cache: false,
+                success:function(data){
+                    fname = data.efname;
+                    $scope.modFname = data.efname;
+                    $scope.modPosition = data.eposition;
+                    $scope.modOffice = data.eoffice;
+                    $scope.modDFname = fname;
+                    $scope.$apply();
+                },
+                error: function(a,b,c){
+                    console.log('Error: ' + a + " " + b + " " + c);
+            }
+        });
 
+        }
+
+         
         // $scope.remove = function(){
         //     console.log(username);
         //     $.ajax({
@@ -171,16 +221,15 @@
                     dataType: 'JSON',
                     type: 'GET',
                     success: function(data){
-                        for(var x = 0; x < data.length; x++){
-                        $("#accounts").before($compile(
-                        "<tr class='sname'>" +
-                            "<td>"+ data[x].nam +"</td>" +  
-                            "<td>"+ data[x].position +"</td>" +
-                            "<td><span>"+ data[x].username +"</span></td>" +
-                            "<td>"+ data[x].office +"</td>" +
-                            "<td><a><span ng-click='editAcc($event);' data-toggle='modal' data-target='#modalEdit' class='badge badge-warning edititem'><i class='fa fa-pencil fa-2x' aria-hidden='true'></i></span></a> <a><span ng-click='removeAcc($event);' data-toggle='modal' data-target='#modalRem' class='badge badge-danger'><i class='fa fa-trash-o fa-2x' aria-hidden='true'></i></span></a></td>" +
-                        "</tr>"    
-                        )($scope));
+                        $scope.accounts = [];
+                    for(var x = 0; x < data.length; x++){
+                        var info = {
+                            name: data[x].nam,
+                            position: data[x].position,
+                            username: data[x].username,
+                            office: data[x].office
+                        }
+                         $scope.accounts.push(info);
                     }
                     $scope.$apply();
                 },

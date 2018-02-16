@@ -4,7 +4,7 @@
 
     header('Content-type: application/json'); 
 
-    $username = $_POST['username'];
+    $username = trim($_POST['username']);
 
     $efname = $_POST['efname'];
     $eposition = $_POST['eposition'];

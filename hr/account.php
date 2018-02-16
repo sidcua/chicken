@@ -14,12 +14,7 @@
 <body ng-app="appHR" ng-controller="ctrlHR" ng-init="refresh();">
                    
     <?php include './view/header.php'; ?>
-    <!-- Search form -->
-     <form class="form-inline">
-                
-        <input class="form-control mr-lg-8" type="text" style='color:black' align="right" width="48" height="48" placeholder="Search" aria-label="Search">
-     </form>
-    <!-- Search form -->
+  
                                                    
                                       <!-- MODALS -->
 
@@ -43,14 +38,14 @@
 
                     <div class="md-form form-sm">
                     <i class="fa fa-envelope prefix"></i>
-                    <input type="text" name="efname" id="efname" class="form-control">
+                    <input type="text" ng-model="modFname" name="efname" id="efname" class="form-control">
                     <label for="efname">Full Name</label>
                 </div>
                 
                 <div class="md-form form-sm">
                     <i class="fa fa-envelope prefix"></i>
-                    <input type="text" name="eposition" id="eposition" class="form-control" list="posList">
-                    <label for="eposition">Position</label>
+                    <input type="text" ng-model="modPosition" name="eposition" id="eposition" class="form-control" list="posList">
+                    <label class="active" for="eposition">Position</label>
                     <datalist id="posList">
                         <option value="Admin">
                         <option value="User">
@@ -59,7 +54,7 @@
 
             <div class="md-form form-sm">
                     <i class="fa fa-envelope prefix"></i>
-                    <input type="text" name="eoffice" id="eoffice" class="form-control" list="eoffList">
+                    <input type="text" ng-model="modOffice" name="eoffice" id="eoffice" class="form-control" list="eoffList">
                     <label for="eoffice">Office</label>
                     <datalist id="eoffList">
                         <option value="Accounting">
@@ -174,7 +169,7 @@
                 <div class="modal-body mb-0">
                     <div class="md-form form-sm">
                         <i class="fa fa-envelope prefix"></i>
-                        <input type="text" id="empname" name="empname" class="form-control">
+                        <input type="text" ng-model="modDFname" id="empname" name="empname" class="form-control">
                         <label for="empname">Name of Employee</label>
                     </div>
 
@@ -254,8 +249,29 @@
     <!--Modal: modalConfirmDelete-->
 
                                         <!-- MODALS -->
-	
-    <div class="card">  
+                                        
+                                          <!-- Search form -->
+    <div class="row" style="margin-top: 5%; margin-left: 20px;">
+        <div class="md-form col-md-2">
+        <form class="form-inline">
+        <i class="fa fa-search prefix" aria-hidden="true"></i> <input id="" ng-model="searchAccount" class="form-control mr-lg-8" type="text" style='color:black' align="right" placeholder="Search" aria-label="Search">
+        
+        </form>
+        </div>
+        
+        <div class="md-form col-md-2">
+        
+        <select name="" ng-model="searchOffice" id="searchOff" style="margin-top:35px;"> 
+        <option ng-repeat="x in offices" label="{{ x.label }}" value="{{ x.value }}"></option>
+        </select>
+        </div>
+        <!-- Search form -->
+        <div class="col-md-3 offset-md-5">  
+        <button class="btn btn-primary" type="button" data-toggle="modal" data-target="#modalReg" ><i class="fa fa-plus" aria-hidden="true"></i> Add an employee</button>
+        </div>
+    </div>
+    <!-- <button class="btn btn-primary" ng-click="clearSearch();">clear </button> -->
+    <div class="card col-md-12">  
         <div class="card-body">
             <div class="table-wrapper-2">
                 <table class="table table-hover table-responsive-md table-fixed">
@@ -273,6 +289,13 @@
                     <tbody class="tableacc" id="table">
                         <tr id="accounts">
                         </tr>
+                        <tr class='sname' ng-repeat="person in accounts | filter:searchAccount | filter:searchOffice">
+                            <td> {{ person.name }} </td> 
+                            <td> {{ person.position }} </td>
+                            <td><span> {{ person.username }} </span></td>
+                            <td> {{ person.office }} </td>
+                            <td><a><span ng-click='editAcc($event);' data-toggle='modal' data-target='#modalEdit' class='badge badge-warning edititem'><i class='fa fa-pencil fa-2x' aria-hidden='true'></i></span></a> <a><span ng-click='removeAcc($event);' data-toggle='modal' data-target='#modalRem' class='badge badge-danger'><i class='fa fa-trash-o fa-2x' aria-hidden='true'></i></span></a></td>
+                        </tr> 
                     </tbody>
                 </table>
             </div>
@@ -280,10 +303,11 @@
     </div>
     <div class="position-fixed">
    
-    <button class="btn btn-primary" type="button" data-toggle="modal" data-target="#modalReg" ><i class="fa fa-plus" aria-hidden="true"></i> Add an employee</button>
-    <button class="btn btn-primary" ng-click="clearSearch();">clear </button>
-
+    
     </div>
+
+    <?php include('./view/footer.php');  ?>
+    
 
                                         <!-- Modal MessageBox -->
      <div id="myModal" class="modal fade" role="dialog">
