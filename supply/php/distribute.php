@@ -6,6 +6,17 @@
 		$query = "INSERT INTO stock (item, transaction, remark) VALUES ('$name', '$transaction', '$remark')";
 		mysqli_query($con, $query);
 	}
+	function expense($name, $price, $quantity, $con){
+		$query = "SELECT item FROM expense WHERE item = '$name'";
+		$result = mysqli_query($con, $query);
+		if(mysqli_num_rows($result) == 0){
+			$query = "INSERT INTO expense (item, price, quantity) VALUES ('$name', '$price', '$quantity')";
+		}
+		else{
+			$query = "UPDATE expense SET quantity = '$quantity', price = '$price' WHERE item = '$name'";	
+		}
+		mysqli_query($con, $query);
+	}
 	if($action == "listitem"){
 		$output = "";
 		$query = "SELECT * FROM item ORDER BY name ASC";
@@ -74,7 +85,7 @@
 			echo json_encode(false);
 		}
 		else{
-			$query = "SELECT name, quantity FROM item WHERE itemID = '$itemid'";
+			$query = "SELECT name, quantity, price FROM item WHERE itemID = '$itemid'";
 			$result = mysqli_query($con, $query);
 			$fetch = mysqli_fetch_assoc($result);
 			$oldquantity = $fetch['quantity'];
@@ -82,7 +93,8 @@
 			$quantity = $oldquantity - $quantity;
 			$query = "UPDATE item SET quantity = '$quantity' WHERE itemID = '$itemid'";
 			mysqli_query($con, $query);
-			trans($name, $quantity, "Distributed to ".$office, $con);
+			trans($name, $quantity, "Distributed to ".$office, $con
+			expense($name, $price, );
 			echo json_encode(true);
 		}
 	}
