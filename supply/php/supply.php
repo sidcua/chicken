@@ -6,6 +6,17 @@
 		$query = "INSERT INTO stock (item, transaction, remark) VALUES ('$name', '$transaction', '$remark')";
 		mysqli_query($con, $query);
 	}
+	function expense($name, $price, $quantity, $con){
+		$query = "SELECT item FROM expense WHERE item = '$name'";
+		$result = mysqli_query($con, $query);
+		if(mysqli_num_rows($result) == 0){
+			$query = "INSERT INTO expense (item, price, quantity) VALUES ('$name', '$price', '$quantity')";
+		}
+		else{
+			$query = "UPDATE expense SET quantity = '$quantity', price = '$price' WHERE item = '$name'";	
+		}
+		mysqli_query($con, $query);
+	}
 	if($action == "listitem"){
 		$output = "";
 		$query = "SELECT * FROM item ORDER BY name ASC";
@@ -44,6 +55,7 @@
 			$query = "INSERT INTO item (name, price, quantity) VALUES ('$name', '$price', '$quantity')";
 			mysqli_query($con, $query);
 			trans($name, $quantity, "New Stock", $con);
+			expense($name, $price, $quantity, $con);
 			echo json_encode(true);
 		}
 	}
@@ -70,6 +82,7 @@
 			$query = "UPDATE item SET name = '$name', price = '$price' WHERE itemID = '$itemid'";
 			mysqli_query($con, $query);
 			trans($name, $price, "Edit Stock", $con);
+			expense($name, $price, $quantity, $con);
 			echo json_encode(true);
 		}
 	}
@@ -77,15 +90,17 @@
 		$itemid = mysqli_escape_string($con, $_POST['itemid']);
 		$quantity = mysqli_escape_string($con, $_POST['quantity']);
 		$change = $quantity;
-		$query = "SELECT name, quantity FROM item WHERE itemID = '$itemid'";
+		$query = "SELECT name, quantity, price FROM item WHERE itemID = '$itemid'";
 		$result = mysqli_query($con, $query);
 		$fetch = mysqli_fetch_assoc($result);
 		$oldquantity = $fetch['quantity'];
 		$name = $fetch['name'];
+		$price = $fetch['price'];
 		$quantity = $quantity + $oldquantity;
 		$query = "UPDATE item SET quantity = '$quantity' WHERE itemID = '$itemid'";
 		mysqli_query($con, $query);
 		trans($name, $change, "Stock-In", $con);
+		expense($name, $price, $quantity, $con);
 	}
 	if($action == "decreasequantity"){
 		$itemid = mysqli_escape_string($con, $_POST['itemid']);
