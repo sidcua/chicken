@@ -3,7 +3,7 @@
     include '../../php/connect.php';
 
    
-    $sql = "SELECT * FROM account";
+    $sql = "SELECT * FROM account WHERE office != 'MIS'";
     $sql2 = "SELECT * FROM emphistory";
     $result = mysqli_query($con,$sql);
     $counter = 0;

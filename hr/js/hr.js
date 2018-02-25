@@ -1,3 +1,4 @@
+
 //======================================================
 //                         ANGULAR
 //======================================================
@@ -29,6 +30,16 @@
         // $(document).ready(function(){
         //     holdaccid();
         // })
+
+        (function($){
+            $(function(){
+          
+              $('.button-collapse').sideNav();
+              $('.parallax').parallax();
+          
+            });
+          })(jQuery);
+        
 
         function messageBox(titles,message){
             $scope.modalTitle = titles;
@@ -74,6 +85,7 @@
         //     });
         // }
 
+        
         $scope.clearTable = function(){
             $("#table").children('.sname').remove();
 
@@ -168,10 +180,23 @@
         });
 
         }
-            function deleteID(id){
-                
-            }
 
+            function totalEmployees(){
+                $.ajax({
+                    url:'./php/totalemp.php',
+                    dataType: 'JSON',
+                    type: 'GET',
+                    success:function(data){
+                        // data = $.parseJSON(data);
+                        $scope.Hr = data.hr;
+                        $scope.Supply = data.supply;
+                        $scope.Accounting = data.accounting;
+                    },
+                    error: function(a,b,c){
+                        console.log('Error: ' + a + " " + b + " " + c);
+                }
+            });
+            }
          
         // $scope.remove = function(){
         //     console.log(username);
@@ -241,6 +266,7 @@
         // data-id='"+ data[x].idacc +"'
         $scope.refresh = function(){
             $('#tables').children('.sname').remove();
+            totalEmployees();
             if(localStorage.getItem('status') == 'true'){
                 $('#pname').text(localStorage.getItem('name'));
                 $.ajax({
@@ -262,7 +288,7 @@
                                 "<td> " + data[x].nam2 + "</td> "+
                                 "<td> " + data[x].reason + " </td>"+
                                 "<td> " + data[x].date + " </td>"+
-                                "<td><a><span ng-click='deleteEmpHist("+ data[x].idhist +");' data-toggle='modal' data-target='#modalConfirmClear' class='badge badge-danger'><i class='fa fa-trash-o fa-2x' aria-hidden='true'></i></span></a></td>"+
+                                "<td><a><span ng-click='deleteEmpHist("+ data[x].idhist +");' data-toggle='modal' data-target='' class='badge badge-danger'><i class='fa fa-trash-o fa-2x' aria-hidden='true'></i></span></a></td>"+
                             "</tr> "
                             )($scope));
                         }

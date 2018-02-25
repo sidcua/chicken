@@ -36,7 +36,7 @@ function login(){
 						window.location = "accounting/";
 					}
 					else if(data.office == "MIS"){
-						window.location == "mis/";
+						window.location = "mis/";
 					}
 				}
 				else{

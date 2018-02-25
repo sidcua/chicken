@@ -39,13 +39,13 @@
                     <div class="md-form form-sm">
                     <i class="fa fa-envelope prefix"></i>
                     <input type="text" ng-model="modFname" name="efname" id="efname" class="form-control">
-                    <label for="efname">Full Name</label>
+                    <label for="efname" style="height:20px;">Full Name</label>
                 </div>
                 
                 <div class="md-form form-sm">
                     <i class="fa fa-envelope prefix"></i>
                     <input type="text" ng-model="modPosition" name="eposition" id="eposition" class="form-control" list="posList">
-                    <label class="active" for="eposition">Position</label>
+                    <label class="active" for="eposition" style="height:20px;">Position</label>
                     <datalist id="posList">
                         <option value="Admin">
                         <option value="User">
@@ -55,7 +55,7 @@
             <div class="md-form form-sm">
                     <i class="fa fa-envelope prefix"></i>
                     <input type="text" ng-model="modOffice" name="eoffice" id="eoffice" class="form-control" list="eoffList">
-                    <label for="eoffice">Office</label>
+                    <label for="eoffice" style="height:20px;">Office</label>
                     <datalist id="eoffList">
                         <option value="Accounting">
                         <option value="Supply">
@@ -97,13 +97,13 @@
                         <div class="md-form form-sm">
                             <i class="fa fa-envelope prefix"></i>
                             <input type="text" name="fname" id="fname" class="form-control">
-                            <label for="fname">Full Name</label>
+                            <label for="fname" style="height:20px;">Full Name</label>
                         </div>
                         
                         <div class="md-form form-sm">
                             <i class="fa fa-envelope prefix"></i>
                             <input type="text" name="position" id="position" class="form-control" list="posList">
-                            <label for="position">Position</label>
+                            <label for="position" style="height:20px;">Position</label>
                             <datalist id="posList">
                                 <option value="Admin">
                                 <option value="User">
@@ -113,29 +113,29 @@
                         <div class="md-form form-sm">
                             <i class="fa fa-envelope prefix"></i>
                             <input type="text" name="username" id="username" class="form-control">
-                            <label for="username">Username</label>
+                            <label for="username" style="height:20px;">Username</label>
                         </div>
 
                         <div class="md-form form-sm">
                             <i class="fa fa-lock prefix"></i>
                             <input type="password" name="password" id="password" class="form-control" maxlength = "20" minlength = "6">
-                            <label for="password">Password</label>
+                            <label for="password" style="height:20px;">Password</label>
                         </div>
         
                         <div class="md-form form-sm">
                             <i class="fa fa-lock prefix"></i>
                             <input type="password" name="cpassword" id="cpassword" class="form-control" maxlength = "20" minlength = "6">
-                            <label for="cpassword">Confirm password</label>
+                            <label for="cpassword" style="height:20px;">Confirm password</label>
                         </div>
         
                     <div class="md-form form-sm">
                             <i class="fa fa-envelope prefix"></i>
                             <input type="text" name="office" id="office" class="form-control" list="offList">
-                            <label for="office">Office</label>
+                            <label for="office" style="height:20px;">Office</label>
                             <datalist id="offList">
-                                <option value="Accounting">
-                                <option value="Supply">
-                                <option value="HR">
+                                <option id="1" value="Accounting"> 
+                                <option id="2" value="Supply"> 
+                                <option id="3" value="HR"> 
                             </datalist>
                     </div>
 
@@ -170,14 +170,13 @@
                     <div class="md-form form-sm">
                         <i class="fa fa-envelope prefix"></i>
                         <input type="text" ng-model="modDFname" id="empname" name="empname" class="form-control">
-                        <label for="empname">Name of Employee</label>
+                        <label for="empname" style="height:20px;">Name of Employee</label>
                     </div>
-
 
                     <div class="md-form form-sm">
                         <i class="fa fa-pencil prefix"></i>
                         <textarea type="text" id="reason" name="reason" class="md-textarea mb-0"></textarea>
-                        <label for="reason">Reason of removal</label>
+                        <label for="reason" style="height:10px;">Reason of removal</label>
                     </div>
 
                     <div class="text-center mt-1-half">
@@ -249,13 +248,19 @@
     <!--Modal: modalConfirmDelete-->
 
                                         <!-- MODALS -->
-                                        
+    <br>
+    <div class="col-md-5 offset-1">  
+    <strong><p class="h1-responsive">Manage Employees</p>
+    <strong>{{ Hr }} <br>
+    {{ Supply }} <br>
+    {{ Accounting }}</strong>
+    </div>
+    
                                           <!-- Search form -->
     <div class="row" style="margin-top: 5%; margin-left: 20px;">
         <div class="md-form col-md-2">
         <form class="form-inline">
-        <i class="fa fa-search prefix" aria-hidden="true"></i> <input id="" ng-model="searchAccount" class="form-control mr-lg-8" type="text" style='color:black' align="right" placeholder="Search" aria-label="Search">
-        
+            <i class="fa fa-search prefix" aria-hidden="true"></i> <input id="" ng-model="searchAccount" class="form-control mr-lg-8" type="text" style='color:black' align="right" placeholder="Search" aria-label="Search">
         </form>
         </div>
         
