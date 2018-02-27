@@ -93,8 +93,7 @@
 			$quantity = $oldquantity - $quantity;
 			$query = "UPDATE item SET quantity = '$quantity' WHERE itemID = '$itemid'";
 			mysqli_query($con, $query);
-			trans($name, $quantity, "Distributed to ".$office, $con
-			expense($name, $price, );
+			trans($name, $quantity, "Distributed to ".$office, $con);
 			echo json_encode(true);
 		}
 	}
@@ -115,7 +114,6 @@
 			$query = "UPDATE item SET quantity = '$quantity' WHERE itemID = '$itemid'";
 			mysqli_query($con, $query);
 			trans($name, $quantity, "Distributed to ".$accname, $con);
-			echo json_encode(true);
 		}
 	}
 ?>

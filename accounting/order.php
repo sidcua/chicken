@@ -31,7 +31,7 @@
 				<div class="col-sm-12">
 					<div class="d-flex flex-row-reverse">
 						<div class="md-form">
-							<button type="button" data-toggle="modal" data-target="#modalclearexpense" class="btn btn-danger"><i class="fa fa-trash" aria-hidden="true"></i> Clear Expense</button>
+							<button type="button" data-toggle="modal" data-target="#modaladdorder" class="btn btn-primary"><i class="fa fa-plus" aria-hidden="true"></i> Add Order</button>
 						</div>
 					</div>
 				</div>
@@ -66,26 +66,40 @@
 	<script type="text/javascript" src="js/mdb/popper.min.js"></script>
 	<script type="text/javascript" src="js/order.js"></script>
 </html>
-<div class="modal fade" id="modalclearexpense" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-sm modal-notify modal-danger" role="document">
+<div class="modal fade" id="modaladdorder" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-notify modal-info" role="document">
         <!--Content-->
-        <div class="modal-content text-center">
+        <div class="modal-content">
             <!--Header-->
-            <div class="modal-header d-flex justify-content-center">
-                <p class="heading">Are you sure?</p>
+            <div class="modal-header">
+                <p class="heading lead">Add Order</p>
+
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true" class="white-text">&times;</span>
+                </button>
             </div>
 
             <!--Body-->
             <div class="modal-body">
-
-                <i class="fa fa-times fa-4x animated rotateIn"></i>
-
+            	<p class="error" id="errormsgaddorder"></p>
+                <div class="md-form">
+				    <input type="text" id="txtname" class="form-control">
+				    <label for="txtname" class="">Customer name</label>
+				</div>
+                <div class="form-group">
+                    <label for="slctitem">Item</label>
+                    <select id="slctitem" class="form-control"></select>
+                </div>
+				<div class="md-form">
+				    <input type="number" id="txtquantity" class="form-control">
+				    <label for="txtquantity" class="">Quantity</label>
+				</div>
             </div>
 
             <!--Footer-->
-            <div class="modal-footer flex-center">
-                <button onclick="clearexpense()" class="btn  btn-outline-secondary-modal">Yes</button>
-                <button type="button" class="btn  btn-primary-modal waves-effect" data-dismiss="modal">No</button>
+            <div class="modal-footer justify-content-center">
+                <button onclick="additem()" type="button" class="btn btn-primary-modal">Add</button>
+                <button type="button" class="btn btn-outline-secondary-modal waves-effect" data-dismiss="modal">Cancel</button>
             </div>
         </div>
         <!--/.Content-->

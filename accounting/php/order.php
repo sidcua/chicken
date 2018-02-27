@@ -28,5 +28,16 @@
 			}
 		}
 		echo json_encode($output);
-	}
+	} 
+    if($action == "inititem"){
+        $query = "SELECT itemID, name FROM item ORDER BY name ASC";
+        $result = mysqli_query($con, $query);
+        $output = '';
+        while($fetch = mysqli_fetch_assoc($result)){
+            $itemid = $fetch['itemID'];
+            $name = $fetch['name'];
+            $output .= '<option value="'.$itemid.'">'.$name.'</option>';
+        }
+        echo json_encode($output);
+    }
 ?>

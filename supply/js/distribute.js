@@ -15,7 +15,7 @@ function listitem(){
 			$("#tblitems").html("");
 		},
 		success: function(data){
-			// alert(data);
+			 alert(data);
 			data = $.parseJSON(data);
 			$("#tblitems").html(data);
 		}
@@ -72,7 +72,7 @@ function distribute(){
 
 				},
 				success: function(data){
-					data = $.parseJSON(data)
+					data = $.parseJSON(data);
 					if(!data){
 						$("#errormsgdistributeitem").html("Stock is not enough to distribute");
 					}
@@ -89,7 +89,7 @@ function distribute(){
 				method: "post",
 				data: {itemid: itemid.value, name: name.value, quantity: quantity.value, action: "distribute_account"},
 				beforeSend: function(){
-
+                    $("#modaldistributeitem").modal('hide');
 				},
 				success: function(data){
 					data = $.parseJSON(data)
