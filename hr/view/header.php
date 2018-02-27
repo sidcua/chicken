@@ -34,12 +34,20 @@
         </ul>
     
         <!-- Logout form -->
-        <form class="form-inline">
+        <ul class="navbar-nav ml-auto d-flex flex-row">
+        <li class="nav-item">
+            <a class="nav-link dropdown-toggle waves-effect waves-light white-text" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-user white-text" aria-hidden="true"></i>
+            <strong><span class="mr-lg-2" style='color:white' id="pname"></strong></span>        
+            </a>
+            <div class="dropdown-menu dropdown-menu-right dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
                 
-        <span class="mr-lg-2" style='color:white' id="pname" aria-hidden="false"></span><span class="fa fa-power-off" style="color:white;" aria-hidden="false" data-toggle="modal" data-target="#modalConfirmLog"></span>
-     </form>
+                <a class="dropdown-item waves-effect waves-light" aria-hidden="false" data-toggle="modal" data-target="#modalConfirmLog" >Logout</a>
+            </div>
+        </li>
+        </ul>
     </div>
     <!-- Collapsible content -->
+    </nav>
 
     <!--Modal: modalConfirmLogout-->
     <div class="modal fade" id="modalConfirmLog" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -69,5 +77,5 @@
         <!--Modal: modalConfirmDelete-->
 
                                             
-</nav>
+
 <!--/.Navbar-->

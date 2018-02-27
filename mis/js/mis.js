@@ -263,47 +263,80 @@
                 }
             });
         }
-        // data-id='"+ data[x].idacc +"'
+
         $scope.refresh = function(){
             $('#tables').children('.sname').remove();
-            totalEmployees();
             if(localStorage.getItem('status') == 'true'){
                 $('#pname').text(localStorage.getItem('name'));
                 $.ajax({
-                    url: './php/loadaccounts.php',
+                    url: './php/loadAccount.php',
                     dataType: 'JSON',
                     type: 'GET',
+                    data: formData,
+                    contentType: false,
+                    processData: false,
                     success: function(data){
                         $scope.accounts = [];
                     for(var x = 0; x < data.length; x++){
                         var info = {
                             name: data[x].nam,
                             position: data[x].position,
-                            username: data[x].username,
-                            office: data[x].office
+                            office: data[x].office,
+
                         }
-                        if(data[x].idhist){
-                            $('#empHistory').after($compile(
-                                "<tr class='sname'>"+
-                                "<td> " + data[x].nam2 + "</td> "+
-                                "<td> " + data[x].reason + " </td>"+
-                                "<td> " + data[x].date + " </td>"+
-                                "<td><a><span ng-click='deleteEmpHist("+ data[x].idhist +");' data-toggle='modal' data-target='' class='badge badge-danger'><i class='fa fa-trash-o fa-2x' aria-hidden='true'></i></span></a></td>"+
-                            "</tr> "
-                            )($scope));
-                        }
-                         $scope.accounts.push(info);
+                        $scope.accounts.push(info);
                     }
-                    $scope.$digest();
                 },
                     error: function(a, b, c){
                         console.log("error: " + a + b + c);
                     }
-                })
+                });
             }else{
                 window.location = "./404.html";
             }
         }
+
+        // data-id='"+ data[x].idacc +"'
+        // $scope.refresh = function(){
+        //     $('#tables').children('.sname').remove();
+        //     totalEmployees();
+        //     if(localStorage.getItem('status') == 'true'){
+        //         $('#pname').text(localStorage.getItem('name'));
+        //         $.ajax({
+        //             url: './php/loadaccounts.php',
+        //             dataType: 'JSON',
+        //             type: 'GET',
+        //             success: function(data){
+        //                 $scope.accounts = [];
+        //             for(var x = 0; x < data.length; x++){
+        //                 var info = {
+        //                     name: data[x].nam,
+        //                     position: data[x].position,
+        //                     username: data[x].username,
+        //                     office: data[x].office
+        //                 }
+        //                 if(data[x].idhist){
+        //                     $('#empHistory').after($compile(
+        //                         "<tr class='sname'>"+
+        //                         "<td> " + data[x].nam2 + "</td> "+
+        //                         "<td> " + data[x].reason + " </td>"+
+        //                         "<td> " + data[x].date + " </td>"+
+        //                         "<td><a><span ng-click='deleteEmpHist("+ data[x].idhist +");' data-toggle='modal' data-target='' class='badge badge-danger'><i class='fa fa-trash-o fa-2x' aria-hidden='true'></i></span></a></td>"+
+        //                     "</tr> "
+        //                     )($scope));
+        //                 }
+        //                  $scope.accounts.push(info);
+        //             }
+        //             $scope.$digest();
+        //         },
+        //             error: function(a, b, c){
+        //                 console.log("error: " + a + b + c);
+        //             }
+        //         })
+        //     }else{
+        //         window.location = "./404.html";
+        //     }
+        // }
     });
 })();
 

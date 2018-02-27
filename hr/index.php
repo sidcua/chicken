@@ -17,7 +17,7 @@
 
 </head>
 <body ng-app="appHR" ng-controller="ctrlHR" ng-init="refresh();">
-                   
+    
     <!--Navbar-->
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top scrolling-navbar">
         <div class="container">
@@ -44,10 +44,17 @@
                 </ul>
             </div>
             
-            <form class="form-inline">
+            <ul class="navbar-nav ml-auto d-flex flex-row">
+                <li class="nav-item">
+                    <a class="nav-link dropdown-toggle waves-effect waves-light" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-user" aria-hidden="true"></i>
+                    <strong><span class="mr-lg-2" style='color:white' id="pname"></strong></span>        
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
                         
-                <strong><span class="mr-lg-2" style='color:white' id="pname"></strong></span><span class="fa fa-power-off" style='color:white' aria-hidden="false" data-toggle="modal" data-target="#modalConfirmLog"></span>
-            </form>
+                        <a class="dropdown-item waves-effect waves-light" aria-hidden="false" data-toggle="modal" data-target="#modalConfirmLog" >Logout</a>
+                    </div>
+                </li>
+            </ul>
             </div>
         </div>
     </nav>
