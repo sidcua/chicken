@@ -96,7 +96,7 @@
 
             <!--Footer-->
             <div class="modal-footer justify-content-center">
-                <button onclick="distribute()" type="button" class="btn btn-primary-modal">Distribute</i></button>
+                <button onclick="distribute()" type="button" class="btn btn-primary-modal">Distribute</button>
                 <button type="button" class="btn btn-outline-secondary-modal waves-effect" data-dismiss="modal">Cancel</button>
             </div>
         </div>

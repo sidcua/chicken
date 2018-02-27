@@ -54,7 +54,6 @@ function additem(){
 				$("#modaladditem").modal('hide');
 			},
 			success: function(data){
-				alert(data);
 				data = $.parseJSON(data);
 				if(!data){
 					$("#errormsgaddquantity").html('<strong>Item already existed</strong>');
