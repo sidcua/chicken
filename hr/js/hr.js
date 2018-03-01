@@ -9,7 +9,9 @@
     var username = "";
     var app = angular.module("appHR",[]);
     var id = "";
-    app.controller("ctrlHR", function($scope,$compile){
+    var empLen = 0;
+    var empHistLen = 0;
+    app.controller("ctrlHR", function($scope,$compile,$timeout){
 
         $scope.modFname = "";        
         $scope.modPosition = "";
@@ -30,15 +32,6 @@
         // $(document).ready(function(){
         //     holdaccid();
         // })
-
-        (function($){
-            $(function(){
-          
-              $('.button-collapse').sideNav();
-              $('.parallax').parallax();
-          
-            });
-          })(jQuery);
         
 
         function messageBox(titles,message){
@@ -230,7 +223,6 @@
                     messageBox(data.titles,data.message,true);  
                     addClear();
                     $('#modalReg').modal('hide');
-                    $scope.clearTable();
                     $scope.refresh();
                     $scope.$apply();
                   }else{
@@ -244,6 +236,7 @@
         }
         $scope.deleteEmpHist = function(id){
             var formData = new FormData();
+            var del = false;
             formData.append('id',id);
             $.ajax({
                 url: './php/clearEmpHistory.php',
@@ -253,19 +246,20 @@
                 contentType: false,
                 processData: false,
                 success: function(data){
-                    $scope.refresh();
-                    $('#modalConfirmClear').modal('hide');
-                    $scope.$apply();
+                    del = true;
                     messageBox(data.titles,data.message,true); 
             },
                 error: function(a, b, c){
                     console.log("error: " + a + b + c);
                 }
             });
+            if(del == true){
+                $scope.refresh();
+            }
         }
         // data-id='"+ data[x].idacc +"'
         $scope.refresh = function(){
-            $('#tables').children('.sname').remove();
+            
             totalEmployees();
             if(localStorage.getItem('status') == 'true'){
                 $('#pname').text(localStorage.getItem('name'));
@@ -274,17 +268,32 @@
                     dataType: 'JSON',
                     type: 'GET',
                     success: function(data){
+                        console.log(empLen + " " + data.length);
+                        if(empLen != data.length){
+                            empLen = data.length;
+                            $('#table').children('.sname').remove();
+                            
                         $scope.accounts = [];
                     for(var x = 0; x < data.length; x++){
                         var info = {
                             name: data[x].nam,
                             position: data[x].position,
                             username: data[x].username,
-                            office: data[x].office
+                            office: data[x].office,
+                            status: data[x].stats,  
                         }
+                        $scope.accounts.push(info);
+                    }
+                    $scope.$digest();
+                }
+
+                if( data[data.length-1].len != empHistLen || data[0].lens == 10){
+                    empHistLen = data[data.length-1].len;
+                    $('#tables').children('.ename').remove();
+                    for(var x = 0; x < data.length; x++){
                         if(data[x].idhist){
                             $('#empHistory').after($compile(
-                                "<tr class='sname'>"+
+                                "<tr class='ename'>"+
                                 "<td> " + data[x].nam2 + "</td> "+
                                 "<td> " + data[x].reason + " </td>"+
                                 "<td> " + data[x].date + " </td>"+
@@ -292,10 +301,13 @@
                             "</tr> "
                             )($scope));
                         }
-                         $scope.accounts.push(info);
                     }
                     $scope.$digest();
-                },
+                }
+                    $timeout(()=>{
+                        $scope.refresh();
+                    },1000);
+             },
                     error: function(a, b, c){
                         console.log("error: " + a + b + c);
                     }

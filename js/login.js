@@ -30,12 +30,16 @@ function login(){
 						window.location = "supply/";
 					}
 					else if(data.office == "HR"){
+						localStorage.setItem('HR', 'true');
 						window.location = "hr/";
 					}
 					else if(data.office == "Accounting"){
+						localStorage.setItem('Accounting', 'true');
+						
 						window.location = "accounting/";
 					}
 					else if(data.office == "MIS"){
+						localStorage.setItem('MIS', 'true');
 						window.location = "mis/";
 					}
 				}

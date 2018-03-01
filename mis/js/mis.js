@@ -9,12 +9,14 @@
     var username = "";
     var app = angular.module("appMIS",[]);
     var id = "";
-    app.controller("ctrlMIS", function($scope,$compile){
+    var empLen = 0;
+    app.controller("ctrlMIS", function($scope,$compile,$timeout){
 
         $scope.modFname = "";        
         $scope.modPosition = "";
         $scope.modOffice = "";
-        $scope.person = [];
+        $scope.person = [];        
+        $scope.person2 = [];
         $scope.employee = [];
         
         $scope.offices = [
@@ -31,14 +33,6 @@
         //     holdaccid();
         // })
 
-        (function($){
-            $(function(){
-          
-              $('.button-collapse').sideNav();
-              $('.parallax').parallax();
-          
-            });
-          })(jQuery);
         
 
         function messageBox(titles,message){
@@ -95,25 +89,43 @@
             window.location = "../";
         }
        
-        $scope.accRem = function(){
-            var contents = $('#removeEmpForm').serialize();
+        // $scope.accDecline = function(){
+        //     var contents = $('#removeEmpForm').serialize();
             // var username = angular.element($event.currentTarget).parent().parent().parent().find("span").text();
-            console.log(contents);
+        //     console.log(contents);
+        //     console.log(username);
+        //     $.ajax({
+        //         url: './php/declineAcc.php',
+        //         dataType: 'json',
+        //         type: 'post',
+        //         data: contents + "&username=" + username,
+        //         cache: false,
+        //         success: function(data){
+        //             messageBox(data.titles,data.message,true);
+        //             $('#modalDecline').modal('hide');
+        //             removeClear();
+        //             $scope.clearTable();
+        //             $scope.refresh();
+        //             // $scope.$apply();
+        //         },
+        //         error: function(a,b,c){
+        //             console.log('Error: ' + a + " " + b + " " + c);
+        //         }
+        //     });
+        // }
+
+        $scope.accApprove = function(){
             console.log(username);
             $.ajax({
-                url: './php/removeEmp.php',
+                url: './php/approveAcc.php',
                 dataType: 'json',
                 type: 'post',
-                data: contents + "&username=" + username,
+                data: "&username=" + username,
                 cache: false,
                 success: function(data){
                     messageBox(data.titles,data.message,true);
-                    $('#modalRem').modal('hide');
-                    $('#modalConfirmRem').modal('hide');
-                    removeClear();
-                    $scope.clearTable();
+                    $('#modalApprove').modal('hide');
                     $scope.refresh();
-                    // $scope.$apply();
                 },
                 error: function(a,b,c){
                     console.log('Error: ' + a + " " + b + " " + c);
@@ -121,41 +133,17 @@
             });
         }
 
-        $scope.accEdit = function(){
-            var contents = $('#editEmpForm').serialize();
-            console.log(contents);
-            console.log(username);
-            $.ajax({
-                url: './php/editEmp.php',
-                dataType: 'json',
-                type: 'post',
-                data: contents + "&username=" + username,
-                cache: false,
-                success: function(data){
-                    messageBox(data.titles,data.message,true);
-                    editClear();
-                    $('#modalEdit').modal('hide');
-                    $scope.clearTable();
-                    $scope.refresh();
-                    // $scope.$apply();
-                },
-                error: function(a,b,c){
-                    console.log('Error: ' + a + " " + b + " " + c);
-                }
-            });
-        }
-
-        $scope.removeAcc = function($event){
+        $scope.declineAcc = function($event){
             username = angular.element($event.currentTarget).parent().parent().parent().find("span").text();
             console.log(username);
-            Autofill(username);
+            // Autofill(username);
            
                 }
 
-        $scope.editAcc = function($event){
+        $scope.approveAcc = function($event){
             username = angular.element($event.currentTarget).parent().parent().parent().find("span").text();
             console.log(username);
-            Autofill(username);
+            // Autofill(username);
            
     }
         function Autofill(username){
@@ -242,55 +230,98 @@
                 }
             });
         }
-        $scope.deleteEmpHist = function(id){
-            var formData = new FormData();
-            formData.append('id',id);
-            $.ajax({
-                url: './php/clearEmpHistory.php',
-                dataType: 'JSON',
-                type: 'POST',
-                data: formData,
-                contentType: false,
-                processData: false,
-                success: function(data){
-                    $scope.refresh();
-                    $('#modalConfirmClear').modal('hide');
-                    $scope.$apply();
-                    messageBox(data.titles,data.message,true); 
-            },
-                error: function(a, b, c){
-                    console.log("error: " + a + b + c);
-                }
-            });
+        // $scope.deleteEmpHist = function(id){
+        //     var formData = new FormData();
+        //     formData.append('id',id);
+        //     $.ajax({
+        //         url: './php/clearEmpHistory.php',
+        //         dataType: 'JSON',
+        //         type: 'POST',
+        //         data: formData,
+        //         contentType: false,
+        //         processData: false,
+        //         success: function(data){
+        //             $scope.refresh();
+        //             $('#modalConfirmClear').modal('hide');
+        //             $scope.$apply();
+        //             messageBox(data.titles,data.message,true); 
+        //     },
+        //         error: function(a, b, c){
+        //             console.log("error: " + a + b + c);
+        //         }
+        //     });
+        // }
+
+        $scope.loadEmp = function(){
+            if(localStorage.getItem('status') == 'true'){
+                $('#pname').text(localStorage.getItem('name'));
+                $.ajax({
+                    url: './php/loadEmp.php',
+                    dataType: 'JSON',
+                    type: 'GET',
+                    success: function(data){
+                        if(empLen != data.length){
+                            empLen = data.length;
+                            $('#tableacc').children('.hname').remove();
+                            $scope.accounts = [];
+                            for(var x = 0; x < data.length; x++){
+                                var info = {
+                            name2: data[x].nam2,                            
+                            position2: data[x].position2,
+                            username2: data[x].username2,
+                            office2: data[x].office2,                            
+                        }
+                        $scope.accounts.push(info);
+                    }
+                    $scope.$digest();
+                  }
+                  
+                },
+                    error: function(a, b, c){
+                        console.log("error: " + a + b + c);
+                    }
+                });
+            }else{
+                window.location = "./404.html";
+            }
         }
 
+
         $scope.refresh = function(){
-            $('#tables').children('.sname').remove();
+            $scope.loadEmp();
             if(localStorage.getItem('status') == 'true'){
                 $('#pname').text(localStorage.getItem('name'));
                 $.ajax({
                     url: './php/loadAccount.php',
                     dataType: 'JSON',
                     type: 'GET',
-                    data: formData,
-                    contentType: false,
-                    processData: false,
                     success: function(data){
-                        $scope.accounts = [];
-                    for(var x = 0; x < data.length; x++){
-                        var info = {
+                        if(empLen != data.length){
+                            empLen = data.length;
+                            $('#tabletrans').children('.tname').remove();
+                            $scope.accounts = [];
+                            for(var x = 0; x < data.length; x++){
+                                var info = {
                             name: data[x].nam,
                             position: data[x].position,
+                            username: data[x].username,                            
                             office: data[x].office,
+                            status: data[x].stats,
 
                         }
                         $scope.accounts.push(info);
                     }
+                    $scope.$digest();
+                  }
+
                 },
                     error: function(a, b, c){
                         console.log("error: " + a + b + c);
                     }
                 });
+                $timeout(()=>{
+                    $scope.refresh();
+                },1000);
             }else{
                 window.location = "./404.html";
             }

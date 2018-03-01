@@ -22,8 +22,8 @@
     <br>
     <br>
     <br>
-    <div class="card col-md-12">  
-        <div class="card-body">
+    <div class="card col-md-12" style="background-color:#1F2739;">  
+        <div class="card-body" style="background-color:#1F2739;">
             <div class="table-wrapper-2">
 
             <table class="table table-responsive-md table-fixed" style="background-color:#929FBA;">

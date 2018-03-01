@@ -245,7 +245,7 @@
             <!--/.Content-->
         </div>
     </div>
-    <!--Modal: modalConfirmDelete-->
+    <!--Modal: modalConfirmLogout-->
 
                                         <!-- MODALS -->
     <br>
@@ -286,7 +286,9 @@
                             <th>Position</th>
                             <th>Username</th>
                             <th>Office</th>
+                            <th>Status</th>
                             <th>Action</th>
+
                             
                         </tr>
                     </thead>
@@ -299,6 +301,7 @@
                             <td> {{ person.position }} </td>
                             <td><span> {{ person.username }} </span></td>
                             <td> {{ person.office }} </td>
+                            <td>{{ person.status }}</td>
                             <td><a><span ng-click='editAcc($event);' data-toggle='modal' data-target='#modalEdit' class='badge badge-warning edititem'><i class='fa fa-pencil fa-2x' aria-hidden='true'></i></span></a> <a><span ng-click='removeAcc($event);' data-toggle='modal' data-target='#modalRem' class='badge badge-danger'><i class='fa fa-trash-o fa-2x' aria-hidden='true'></i></span></a></td>
                         </tr> 
                     </tbody>

@@ -22,8 +22,8 @@
     <br>
     <br>
     <br>
-    <div class="card col-md-12">  
-        <div class="card-body">
+    <div class="card col-md-12" style="background-color:#1F2739;">   
+        <div class="card-body" style="background-color:#1F2739;">
             <div class="table-wrapper-2">
 
             <table class="table table-responsive-md table-fixed" style="background-color:#929FBA;">
@@ -38,11 +38,11 @@
             <tbody class="tableacc" id="tableacc" >
             <tr id="accounts">
             </tr>
-                <tr id='sname' ng-repeat="person in accounts">
-                    <td> {{ person.name }} </td>
-                    <td> {{ person.position }} </td>
-                    <td><span> {{ person.username }} </span></td>
-                    <td> {{ person.office }} </td>
+                <tr class='hname' ng-repeat="person in accounts">
+                    <td> {{ person.name2 }} </td>
+                    <td> {{ person.position2 }} </td>
+                    <td><span> {{ person.username2 }} </span></td>
+                    <td> {{ person.office2 }} </td>
                 </tr>
             </tbody>
         </table>
