@@ -21,7 +21,9 @@
             <li class="nav-item">
                 <a class="nav-link" href="order.php">Order</a>
             </li>
-
+            <li class="nav-item">
+                <a class="nav-link" href="orderhistory.php">Order History</a>
+            </li>
             <!-- Dropdown -->
 
         </ul>

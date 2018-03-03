@@ -38,6 +38,7 @@
 			</div>						    
 			<div class="row">
 				<div class="col-sm-12">
+                    <p class="error text-center" id="errormsgtblorder"></p>
 					<div class="table-wrapper-2">
 						<table class="table">
 						    <thead class="blue-grey lighten-4">
@@ -98,8 +99,58 @@
 
             <!--Footer-->
             <div class="modal-footer justify-content-center">
-                <button onclick="additem()" type="button" class="btn btn-primary-modal">Add</button>
+                <button onclick="addorder()" type="button" class="btn btn-primary-modal">Add</button>
                 <button type="button" class="btn btn-outline-secondary-modal waves-effect" data-dismiss="modal">Cancel</button>
+            </div>
+        </div>
+        <!--/.Content-->
+    </div>
+</div>
+<div class="modal fade" id="modalcompleteorder" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-sm modal-notify modal-success" role="document">
+        <!--Content-->
+        <div class="modal-content text-center">
+            <!--Header-->
+            <div class="modal-header d-flex justify-content-center">
+                <p class="heading">Complete Order?</p>
+            </div>
+
+            <!--Body-->
+            <div class="modal-body">
+
+                <i class="fa fa-check fa-4x animated rotateIn"></i>
+
+            </div>
+
+            <!--Footer-->
+            <div class="modal-footer flex-center">
+                <button onclick="completeorder()" type="button" class="btn btn-outline-secondary-modal">Yes</button>
+                <button type="button" class="btn  btn-primary-modal waves-effect" data-dismiss="modal">No</button>
+            </div>
+        </div>
+        <!--/.Content-->
+    </div>
+</div>
+<div class="modal fade" id="modaldeclineorder" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-sm modal-notify modal-danger" role="document">
+        <!--Content-->
+        <div class="modal-content text-center">
+            <!--Header-->
+            <div class="modal-header d-flex justify-content-center">
+                <p class="heading">Decline order?</p>
+            </div>
+
+            <!--Body-->
+            <div class="modal-body">
+
+                <i class="fa fa-times fa-4x animated rotateIn"></i>
+
+            </div>
+
+            <!--Footer-->
+            <div class="modal-footer flex-center">
+                <button onclick="declineorder()" type="button" class="btn btn-outline-secondary-modal">Yes</button>
+                <button type="button" class="btn  btn-primary-modal waves-effect" data-dismiss="modal">No</button>
             </div>
         </div>
         <!--/.Content-->

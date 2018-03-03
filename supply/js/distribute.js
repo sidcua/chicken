@@ -15,7 +15,6 @@ function listitem(){
 			$("#tblitems").html("");
 		},
 		success: function(data){
-			 alert(data);
 			data = $.parseJSON(data);
 			$("#tblitems").html(data);
 		}

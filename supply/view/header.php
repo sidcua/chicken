@@ -22,6 +22,9 @@
                 <a class="nav-link" href="./distribute.php">Distribute</a>
             </li>
             <li class="nav-item">
+                <a class="nav-link" href="./orders.php">Orders</a>
+            </li>
+            <li class="nav-item">
                 <a class="nav-link" href="./transaction.php">Transaction</a>
             </li>
 
