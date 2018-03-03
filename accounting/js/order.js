@@ -1,6 +1,7 @@
 $(document).ready(function(){
 	listorder();
     loadaddordermodal();
+    holdorderid();
 })
 function url(){
 	return "./php/order.php";
@@ -58,4 +59,52 @@ function addorder(){
             }
         })
     }
+}
+function holdorderid(){
+    $('body').on('click', '#tblorder>tr', function(){
+        $("#orderidholder").val($(this).attr('data-id'));
+    })
+}
+function declineorder(){
+    var orderid = document.getElementById("orderidholder");
+    $.ajax({
+        url: url(),
+        method: "post",
+        data: {orderid: orderid.value, action: "declineorder"},
+        beforeSend: function(){
+            $("#modaldeclineorder").modal('hide');  
+        },
+        success: function(data){
+            listorder();
+        }
+    })
+}
+function completeorder(){
+    var orderid = document.getElementById("orderidholder");
+    $.ajax({
+        url: url(),
+        method: "post",
+        data: {orderid: orderid.value, action: "completeorder"},
+        beforeSend: function(){
+            $("#modalcompleteorder").modal('hide');
+        },
+        success: function(data){
+            data = $.parseJSON(data);
+            if(!data.status){
+                $("#errormsgtblorder").text("Order has not yet confirmed by the supply department");
+                setTimeout(function(){
+                    $("#errormsgtblorder").empty();
+                }, 5000)
+            }
+            else if(!data.quantity){
+                $("#errormsgtblorder").text("Stock is not enough");
+                setTimeout(function(){
+                    $("#errormsgtblorder").empty();
+                }, 5000)
+            }
+            else{
+                listorder();
+            }
+        }
+    })
 }

@@ -24,7 +24,7 @@
 				<td>'.$quantity.'</td>
 				<td>'.$total.'</td></tr>';
 			}
-			$output .= '<tr><td colspan="3"></td><td>Overall Total: '.$all.'</td></tr>';
+			$output .= '<tr><td colspan="3"></td><td>Overall Expense: '.$all.'</td></tr>';
 		}
 		echo json_encode($output);
 	}
