@@ -64,7 +64,7 @@
                 </div>
 
                 <div class="text-center mt-1-half">
-                    <button class="btn btn-info mb-1" name="saveEdit" ng-click="accEdit();" >Save<i class="fa fa-check ml-1"></i></button>
+                    <center><button class="btn btn-info mb-1" name="saveEdit" ng-click="accEdit();" >Save<i class="fa fa-check ml-1"></i></button></center>
                 </div>
 
             </div>
@@ -140,7 +140,7 @@
                     </div>
 
                         <div class="text-center mt-2">
-                            <button type="submit" class="btn btn-info mb-2" name="addEmp" ng-click="addEmp();" >Add Employee<i class="fa fa-sign-in ml-1"></i></button>
+                        <center><button type="submit" class="btn btn-info mb-2" name="addEmp" ng-click="addEmp();" >Add Employee<i class="fa fa-sign-in ml-1"></i></button></center>
                         </div>
         
                     </div>
@@ -180,7 +180,7 @@
                     </div>
 
                     <div class="text-center mt-1-half">
-                        <button class="btn btn-info mb-2" data-toggle="modal" data-target="#modalConfirmRem">Remove<i class="fa fa-send ml-1"></i></button>
+                    <center><button class="btn btn-info mb-2" data-toggle="modal" data-target="#modalConfirmRem">Remove<i class="fa fa-send ml-1"></i></button></center>
                     </div>
 
                 </div>
@@ -260,13 +260,13 @@
     <div class="row" style="margin-top: 5%; margin-left: 20px;">
         <div class="md-form col-md-2">
         <form class="form-inline">
-            <i class="fa fa-search prefix" aria-hidden="true"></i> <input id="" ng-model="searchAccount" class="form-control mr-lg-8" type="text" style='color:black' align="right" placeholder="Search" aria-label="Search">
+            <i class="fa fa-search prefix" style="margin-top:10px;" aria-hidden="true"></i> <input id="" ng-model="searchAccount" class="form-control mr-lg-8" type="text" style='color:black' align="right" placeholder="Search" aria-label="Search" >
         </form>
         </div>
         
         <div class="md-form col-md-2">
         
-        <select name="" ng-model="searchOffice" id="searchOff" style="margin-top:35px;"> 
+        <select class="form-control" name="" ng-model="searchOffice" id="searchOff" style="margin-top:12px; width:65%; height:65%;" > 
         <option ng-repeat="x in offices" label="{{ x.label }}" value="{{ x.value }}"></option>
         </select>
         </div>
