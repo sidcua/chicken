@@ -47,7 +47,7 @@
             <ul class="navbar-nav ml-auto d-flex flex-row">
                 <li class="nav-item">
                     <a class="nav-link dropdown-toggle waves-effect waves-light" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-user" aria-hidden="true"></i>
-                    <strong><span class="mr-lg-2" style='color:white' id="pname"></strong></span>        
+                    <strong><span class="mr-lg-2" style='color:white' id="pname"></span>       </strong> 
                     </a>
                     <div class="dropdown-menu dropdown-menu-right dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
                         
@@ -67,6 +67,7 @@
       <li data-target="#carousel-example-3" data-slide-to="0" class="active"></li>
       <li data-target="#carousel-example-3" data-slide-to="1"></li>
       <li data-target="#carousel-example-3" data-slide-to="2"></li>
+      <li data-target="#carousel-example-3" data-slide-to="3"></li>
   </ol>
   <!--/.Indicators-->
 
@@ -137,6 +138,25 @@
 
       </div>
       <!--/.Third slide-->
+      <div class="carousel-item view hm-black-slight" style="background-repeat: no-repeat; background-size: cover;"><img src="./img/background4.jpg" style="width:100%; height:100%; margin:auto; margin-top: -10px;">
+
+          <!-- Caption -->
+          <div class="full-bg-img flex-center white-text">
+              <ul class="animated fadeIn col-md-12">
+                  <li>
+                      <!-- <h1 class="h1-responsive font-bold">Weekend in the nature - the best way to relax</h1> -->
+                  </li>
+                  <li>
+                      <!-- <p>8 Reasons why you need to spend more time in nature</p> -->
+                  </li>
+                  <li>
+                      <!-- <a target="_blank" href="https://mdbootstrap.com/forums/forum/support/" class="btn btn-outline-white" rel="nofollow">Read more</a> -->
+                  </li>
+              </ul>
+          </div>
+          <!-- /.Caption -->
+
+      </div>
   </div>
   <!--/.Slides-->
 

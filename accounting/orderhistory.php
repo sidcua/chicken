@@ -31,7 +31,7 @@
 				<div class="col-sm-12">
 					<div class="d-flex flex-row-reverse">
 						<div class="md-form">
-							<button type="button" data-toggle="modal" data-target="#modaladdorder" class="btn btn-primary"><i class="fa fa-plus" aria-hidden="true"></i> Add Order</button>
+							<button type="button" data-toggle="modal" data-target="#modalclearhistory" class="btn btn-danger"><i class="fa fa-trash" aria-hidden="true"></i> Clear History</button>
 						</div>
 					</div>
 				</div>
@@ -46,7 +46,7 @@
 						            <th>Customer</th>
 						            <th>Item</th>
 						            <th>Quantity</th>
-						            <th>Status</th>
+						            <th>Remark</th>
 						        </tr>
 						    </thead>
 						    <tbody id="tblhistory"> 
@@ -63,5 +63,30 @@
 	<script type="text/javascript" src="js/mdb/mdb.js"></script>
 	<script type="text/javascript" src="js/mdb/bootstrap.js"></script>
 	<script type="text/javascript" src="js/mdb/popper.min.js"></script>
-	<script type="text/javascript" src="js/order.js"></script>
+	<script type="text/javascript" src="js/orderhistory.js"></script>
 </html>
+<div class="modal fade" id="modalclearhistory" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-sm modal-notify modal-danger" role="document">
+        <!--Content-->
+        <div class="modal-content text-center">
+            <!--Header-->
+            <div class="modal-header d-flex justify-content-center">
+                <p class="heading">Clear order history?</p>
+            </div>
+
+            <!--Body-->
+            <div class="modal-body">
+
+                <i class="fa fa-times fa-4x animated rotateIn"></i>
+
+            </div>
+
+            <!--Footer-->
+            <div class="modal-footer flex-center">
+                <button onclick="clearhistory()" type="button" class="btn btn-outline-secondary-modal">Yes</button>
+                <button type="button" class="btn  btn-primary-modal waves-effect" data-dismiss="modal">No</button>
+            </div>
+        </div>
+        <!--/.Content-->
+    </div>
+</div>

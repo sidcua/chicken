@@ -29,7 +29,7 @@
 			<div class="divspace"></div>					    
 			<div class="row" style="margin-top: 25px;">
 				<div class="col-sm-12">
-                    <p></p>
+                    <p class="error" id="errormsgorders"></p>
 					<div class="table-wrapper-2">
 						<table class="table">
 						    <thead class="blue-grey lighten-4">
