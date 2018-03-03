@@ -3,7 +3,6 @@
 
     session_start();
     include '../../php/connect.php';
-
     header('Content-type: application/json'); 
 
 $username = trim($_POST['username']);

@@ -9,7 +9,7 @@
     var username = "";
     var app = angular.module("appHR",[]);
     var id = "";
-    var empLen = 0;
+    var empLen = -1;
     var empHistLen = 0;
     app.controller("ctrlHR", function($scope,$compile,$timeout){
 
@@ -79,10 +79,6 @@
         // }
 
         
-        $scope.clearTable = function(){
-            $("#table").children('.sname').remove();
-
-        };
         $scope.logout = function(){
             localStorage.clear();
             window.location = "../";
@@ -104,9 +100,8 @@
                     $('#modalRem').modal('hide');
                     $('#modalConfirmRem').modal('hide');
                     removeClear();
-                    $scope.clearTable();
                     $scope.refresh();
-                    // $scope.$apply();
+                    $scope.$apply();
                 },
                 error: function(a,b,c){
                     console.log('Error: ' + a + " " + b + " " + c);
@@ -128,9 +123,8 @@
                     messageBox(data.titles,data.message,true);
                     editClear();
                     $('#modalEdit').modal('hide');
-                    $scope.clearTable();
                     $scope.refresh();
-                    // $scope.$apply();
+                    $scope.$apply();
                 },
                 error: function(a,b,c){
                     console.log('Error: ' + a + " " + b + " " + c);
@@ -211,7 +205,7 @@
 
         $scope.addEmp = function(){
             var contents = $('#addEmpForm').serialize();
-            console.log(contents);
+            // console.log(contents);
             $.ajax({
                 url: './php/addemployee.php',
                 dataType: 'JSON',
@@ -259,8 +253,8 @@
         }
         // data-id='"+ data[x].idacc +"'
         $scope.refresh = function(){
-            
             totalEmployees();
+        
             if(localStorage.getItem('status') == 'true'){
                 $('#pname').text(localStorage.getItem('name'));
                 $.ajax({
@@ -268,27 +262,37 @@
                     dataType: 'JSON',
                     type: 'GET',
                     success: function(data){
-                        console.log(empLen + " " + data.length);
-                        if(empLen != data.length){
-                            empLen = data.length;
+
+                        if(data[0].len == 0 && empLen != data[0].len){
                             $('#table').children('.sname').remove();
-                            
-                        $scope.accounts = [];
-                    for(var x = 0; x < data.length; x++){
-                        var info = {
+                            empLen = data[0].len;
+                            $('#accounts').after($compile(
+                                "<tr class='sname'>"+
+                                "<td colspan = 6 style='text-align:center; font-size:3em; color:#ddd; letter-spacing:0.7em;'> NO DATA </td> "+
+                            "</tr> "
+                            )($scope));
+                        }else if(data[0].len != 0){
+                    $('#table').children('.sname').remove();
+                    console.log(data[0].nam);
+                    empLen = data[0].len;
+                    console.log(empLen + " " + data[0].len+ ": loadaccounts");
+
+                    $scope.accounts = [];
+                    for(var x = 0; x < empLen; x++){
+                        var infos = {
                             name: data[x].nam,
                             position: data[x].position,
                             username: data[x].username,
                             office: data[x].office,
-                            status: data[x].stats,  
+                            status: data[x].stats,      
                         }
-                        $scope.accounts.push(info);
+                        $scope.accounts.push(infos);
                     }
                     $scope.$digest();
                 }
 
-                if( data[data.length-1].len != empHistLen || data[0].lens == 10){
-                    empHistLen = data[data.length-1].len;
+                if( data[data.length-1].lens != empHistLen || data[0].lens == 10){
+                    empHistLen = data[data.length-1].lens;
                     $('#tables').children('.ename').remove();
                     for(var x = 0; x < data.length; x++){
                         if(data[x].idhist){
@@ -303,6 +307,13 @@
                         }
                     }
                     $scope.$digest();
+                } 
+                if(data[0].lens == 10){
+                    $('#empHistory').after($compile(
+                        "<tr class='ename'>"+
+                        "<td colspan = 4 style='text-align:center; font-size:3em; color:#ddd; letter-spacing:0.7em;'> NO DATA </td> "+
+                    "</tr> "
+                    )($scope));
                 }
                     $timeout(()=>{
                         $scope.refresh();

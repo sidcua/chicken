@@ -2,10 +2,13 @@
 
     session_start();
     include '../../php/connect.php';
-
+    header('Content-type: application/json'); 
+    
 
         $sql2 = "SELECT * FROM account WHERE office != 'MIS' AND status = 1";
         $counter = 0;
+        $send[0]['len'] = 0;
+        $send = "";
 
         $result2 = mysqli_query($con,$sql2);        
         if ($result2->num_rows > 0) {
@@ -17,7 +20,10 @@
             $send[$counter]["username2"] = $row2["username"];
             $send[$counter]["office2"] = $row2["office"];
             $counter+= 1;
+            
            }
+        }else{
+            $send[0]['len'] = 10;        
         }
 
         echo json_encode($send);

@@ -1,13 +1,15 @@
 <?php
     session_start();
     include '../../php/connect.php';
-
+    header('Content-type: application/json'); 
+    
    
-    $sql = "SELECT * FROM account WHERE office != 'MIS' AND status = 0";    $sql = "SELECT * FROM account WHERE office != 'MIS' AND status = 0";
+    $sql = "SELECT * FROM account WHERE office != 'MIS' AND status = 0";
     
     $result = mysqli_query($con,$sql);
     $counter = 0;
     $send = "";
+
     if ($result->num_rows > 0) {
     // output data rows
         while($row = $result->fetch_assoc()) {

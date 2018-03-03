@@ -38,11 +38,11 @@
             <tbody class="tableacc" id="tableacc" >
             <tr id="accounts">
             </tr>
-                <tr class='hname' ng-repeat="person in accounts">
-                    <td> {{ person.name2 }} </td>
-                    <td> {{ person.position2 }} </td>
-                    <td><span> {{ person.username2 }} </span></td>
-                    <td> {{ person.office2 }} </td>
+                <tr class='hname' ng-repeat="person2 in accounts2">
+                    <td> {{ person2.name2 }} </td>
+                    <td> {{ person2.position2 }} </td>
+                    <td><span> {{ person2.username2 }} </span></td>
+                    <td> {{ person2.office2 }} </td>
                 </tr>
             </tbody>
         </table>

@@ -9,7 +9,8 @@
     var username = "";
     var app = angular.module("appMIS",[]);
     var id = "";
-    var empLen = 0;
+    var empLens = 0;
+    var empLog = 0;
     app.controller("ctrlMIS", function($scope,$compile,$timeout){
 
         $scope.modFname = "";        
@@ -252,18 +253,17 @@
         //     });
         // }
 
-        $scope.loadEmp = function(){
-            if(localStorage.getItem('status') == 'true'){
-                $('#pname').text(localStorage.getItem('name'));
+         function loadEmp(){
                 $.ajax({
                     url: './php/loadEmp.php',
                     dataType: 'JSON',
                     type: 'GET',
                     success: function(data){
-                        if(empLen != data.length){
-                            empLen = data.length;
+                        if(data[data.length-1].len != empLog || data[0].len == 10){
+                            empLog = data[data.length-1].len;
+                            console.log(empLog + " " + data.length);
                             $('#tableacc').children('.hname').remove();
-                            $scope.accounts = [];
+                            $scope.accounts2 = [];
                             for(var x = 0; x < data.length; x++){
                                 var info = {
                             name2: data[x].nam2,                            
@@ -271,33 +271,29 @@
                             username2: data[x].username2,
                             office2: data[x].office2,                            
                         }
-                        $scope.accounts.push(info);
+                        $scope.accounts2.push(info);
                     }
-                    $scope.$digest();
+                    $scope.$apply();
                   }
-                  
                 },
                     error: function(a, b, c){
                         console.log("error: " + a + b + c);
                     }
                 });
-            }else{
-                window.location = "./404.html";
-            }
         }
 
-
         $scope.refresh = function(){
-            $scope.loadEmp();
             if(localStorage.getItem('status') == 'true'){
-                $('#pname').text(localStorage.getItem('name'));
+                $('#pname').text(localStorage.getItem('name'));                
                 $.ajax({
                     url: './php/loadAccount.php',
                     dataType: 'JSON',
                     type: 'GET',
                     success: function(data){
-                        if(empLen != data.length){
-                            empLen = data.length;
+                        loadEmp();                        
+                        if(empLens != data.length){
+                            empLens = data.length;
+                            console.log(empLens + " " + data.length);
                             $('#tabletrans').children('.tname').remove();
                             $scope.accounts = [];
                             for(var x = 0; x < data.length; x++){
@@ -307,13 +303,11 @@
                             username: data[x].username,                            
                             office: data[x].office,
                             status: data[x].stats,
-
                         }
-                        $scope.accounts.push(info);
+                        $scope.accounts.push(info);  
                     }
                     $scope.$digest();
                   }
-
                 },
                     error: function(a, b, c){
                         console.log("error: " + a + b + c);
