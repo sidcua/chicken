@@ -27,12 +27,19 @@ function readyorder(){
         method: "post",
         data: {orderid: orderid.value, quantity: quantity.value, action: "readyorder"},
         beforeSend: function(){
-            $("#tblorders").empty();
             $("#modalreadyorder").modal('hide');
         },
         success: function(data){
             data = $.parseJSON(data);
-            listorder();
+            if(!data){
+                $("#errormsgorders").text("Stock is not enough");
+                setTimeout(function(){
+                    $("#errormsgorders").empty();
+                }, 5000);
+            }
+            else{
+                listorder();
+            }
         }
     })
 }
