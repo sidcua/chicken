@@ -15,6 +15,8 @@
         $position=$_POST['position'];
         $password=$_POST['password'];
         $office=$_POST['office'];
+        date_default_timezone_set('Asia/Manila');
+        $tdate = date('m-d-Y h:i:sa');
         
             if(trim($fname == '') || trim($username == '') || trim($position == '') || trim($password == '') || trim($office == '')){
                 // echo '<script>alert("Please Fill-up all fields!")</script>';
@@ -33,7 +35,7 @@
                     if($_POST['password']==$_POST['cpassword']){
                     
                         
-                        mysqli_query($con, "INSERT INTO account(name,position,username,password,office) VALUES('$fname','$position','$username','$password','$office')"); 
+                        mysqli_query($con, "INSERT INTO account(name,position,username,password,office,date) VALUES('$fname','$position','$username','$password','$office','$tdate')"); 
                         $send['match'] = true;
                         $send['exist'] = true;
                         $send['leng'] = true;

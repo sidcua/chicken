@@ -15,33 +15,38 @@
 </head>
 <body ng-app="appMIS" ng-controller="ctrlMIS" ng-init="refresh();">
     <?php include './view/header.php'; ?>
-    
+
     <div class="col-md-5 offset-1">  
-        <strong><p class="h1-responsive" style="margin-top:20%;">Manage Transactions</p>
+        <strong><p class="h1-responsive" style="margin-top:20%;">Employee Records</p>
+       
     </div>
     <br>
     <div class="card col-md-12" style="background-color:#1F2739;">  
         <div class="card-body" style="background-color:#1F2739;">
             <div class="table-wrapper-2">
 
-        <table class="table table-responsive-md table-fixed" style="background-color:#929FBA;">
+            <table class="table table-responsive-md table-fixed" style="background-color:#929FBA;">
             <thead>
-                <th><h1>Name</h1></th>
-                <th><h1>Position</h1></th>
-                <th><h1>Username</h1></th>
-                <th><h1>Office</h1></th>
-                <th><h1>Status</h1></h1></th>
-                <th><h1>Action</h1></th>
+                <tr>
+                    <th><h1>Name</h1></th>
+                    <th><h1>Position</h1></th>
+                    <th><h1>Username</h1></th>
+                    <th><h1>Office</h1></th>
+                    <th><h1>Status</h1></h1></th>
+                    <th><h1>Action</h1></th>
+                </tr>
             </thead>
-            <tbody class="tabletrans" id="tabletrans">
-                <tr id="transaccount"></tr>
+            <!-- <tbody class="tabletrans" id="tabletrans">
+            <tr id="transaccount">
+            </tr>
                 <tr class='tname' ng-repeat="person in accounts">
                     <td>{{ person.name }}</td>
                     <td>{{ person.position  }}</td>
-                    <td><span>{{ person.username  }}</span></td>
+              <td><span>{{ person.username  }}</span></>
                     <td>{{ person.office }}</td>
                     <td>{{ person.status }}</td>
-                    <td><a><span ng-click='approveAcc($event);' data-toggle='modal' data-target='#modalApprove' class='badge badge-success edititem'><i class='fa fa-check fa-2x' aria-hidden='true'></i></span></a> <a><span ng-click='declineAcc($event);' data-toggle='modal' data-target='#modalDec' class='badge badge-danger'><i class='fa fa-times fa-2x' aria-hidden='true'></i></span></a></td>
+                    <td><a><span ng-click='approveAcc($event);' data-toggle='modal' data-target='#modalApprove' class='badge badge-success edititem'><i class='fa fa-check fa-2x' aria-hidden='true'></i></span></a> <a><span ng-click='declineAcc($event);' data-toggle='modal' data-target='#modalDecline' class='badge badge-danger'><i class='fa fa-times fa-2x' aria-hidden='true'></i></span></a></td> -->
+
                 </tr>
              </tbody>
         </table>
@@ -81,47 +86,6 @@
     </div>
                                 <!--Modal: modalApprove-->
 
-                             <!--Modal: Modal Decline form-->
-  <div class="modal fade" id="modalDec" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-notify modal-warning" role="document">
-        <!--Content-->
-        <div class="modal-content">
-
-            <!--Header-->
-            <div class="modal-header">
-                <h4 class="title"><i class="fa fa-pencil"></i>Decline Form</h4>
-                <button type="button" class="close waves-effect waves-light" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <!--Body-->
-            <form method="post" id="declineEmpForm" enctype="multipart/form-data">
-
-                <div class="modal-body mb-0">
-                    <div class="md-form form-sm">
-                        <i class="fa fa-envelope prefix"></i>
-                        <input type="text" ng-model="modFname" id="empname" name="empname" class="form-control">
-                        <label for="empname" style="height:20px;">Name of Employee</label>
-                    </div>
-
-                    <div class="md-form form-sm">
-                        <i class="fa fa-pencil prefix"></i>
-                        <textarea type="text" id="remarks" name="remarks" class="md-textarea mb-0"></textarea>
-                        <label for="remarks" style="height:10px;">Remarks</label>
-                    </div>
-
-                    <div class="text-center mt-1-half">
-                    <center><button class="btn btn-info mb-2" data-toggle="modal" data-target="#modalDecline">Decline<i class="fa fa-send ml-1"></i></button></center>
-                    </div>
-
-                </div>
-            </div>
-        </form>
-        <!--/.Content-->
-    </div>
-</div>
-                            <!--Modal: Modal Decline form-->
-
 
                                 <!--Modal: modalDecline-->
 <div class="modal fade" id="modalDecline" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -142,7 +106,7 @@
 
                 <!--Footer-->
                 <div class="modal-footer flex-center">
-                    <button class="btn btn-outline-secondary-modal" ng-click="accDecline();">Yes</button>
+                    <button class="btn btn-outline-secondary-modal" ng-click="accRem();">Yes</button>
                     <button type="button" class="btn  btn-primary-modal waves-effect" data-dismiss="modal">No</button>
                 </div>
             </div>
@@ -171,7 +135,13 @@
                     <div class="modal-body">    
                         <p>{{ modalText }}</p>
                     </div>
-                   
+                    <!-- <div class="modal-footer" ng-hide="closeOnly">
+                        <button ng-click="processOrder(); orderInfo = false;" type="button" class="btn btn-success" data-dismiss="modal">Ok</button>
+                        <button ng-click="orderInfo = false" type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                    </div>
+                    <div class="modal-footer" ng-show="closeOnly">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Ok</button>
+                    </div> -->
                 </div>
                                         <!-- Modal MessageBox -->
 

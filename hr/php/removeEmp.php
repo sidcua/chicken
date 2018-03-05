@@ -12,7 +12,7 @@
     $reason = $_POST['reason'];
 
     
-    mysqli_query($con, "INSERT INTO emphistory(name,reason,date) VALUES('$ename','$reason','$tdate')");
+    mysqli_query($con, "INSERT INTO emphistory(name,reason,date,status) VALUES('$ename','$reason','$tdate',1)");
     $query = "DELETE from account WHERE username = '$username'"; 
     mysqli_query($con, $query);
 

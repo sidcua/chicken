@@ -17,7 +17,7 @@
              <li class="nav-item">
                  <a class="nav-link" href="./transactions.php">Transactions</a>
              </li>
-             <li class="nav-item btn-group">
+        <li class="nav-item btn-group">
              <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Offices
              </a>
              <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
@@ -25,6 +25,9 @@
              <a class="dropdown-item" href="./accountinglog.php">Accounting</a>
              <a class="dropdown-item" href="./hrlog.php">Human Resource</a>                        </div>
          </li>
+            <li class="nav-item">
+                 <a class="nav-link" href="./records.php">Records</a>
+             </li>
              
 
              <!-- <li class="nav-item btn-group">

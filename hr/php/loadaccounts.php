@@ -18,6 +18,7 @@
         $send[$counter]["position"] = $row["position"];
         $send[$counter]["username"] = $row["username"];
         $send[$counter]["office"] = $row["office"];
+        $send[$counter]["date2"] = $row["date"];        
         $send[$counter]["stats"] = "Approve";
         $counter+= 1;
         $send[0]["len"] = $counter;
@@ -33,6 +34,11 @@
                 $send[$counter]["nam2"] = $row2["name"];
                 $send[$counter]["reason"] = $row2["reason"];
                 $send[$counter]["date"] = $row2["date"];
+                if($row2["status"] == 1){
+                    $send[$counter]["stats2"] = "Removed";
+                }else{
+                    $send[$counter]["stats2"] = "Declined";
+                }
                 $counter+= 1;
                 $send[$counter]['lens'] = $counter;
             }

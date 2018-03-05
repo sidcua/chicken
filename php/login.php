@@ -6,7 +6,7 @@
 	if($action == "login"){
 		$username = mysqli_escape_string($con, $_POST['username']);
 		$password = mysqli_escape_string($con, $_POST['password']);
-		$query = "SELECT * FROM account WHERE username = '$username' AND password = '$password'";
+		$query = "SELECT * FROM account WHERE username = '$username' AND password = '$password' AND status = 1";
 		$result = mysqli_query($con, $query);
 		if(mysqli_num_rows($result) > 0){
 			$fetch = mysqli_fetch_assoc($result);

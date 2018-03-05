@@ -9,8 +9,7 @@
     $result = mysqli_query($con,$sql);
     $counter = 0;
     $send = "";
-    $send[0]['lens'] = 0; 
-    
+
     if ($result->num_rows > 0) {
     // output data rows
         while($row = $result->fetch_assoc()) {
@@ -25,12 +24,9 @@
         }else{
             $send[$counter]["stats"] = "Approve";
         }
-        $send[$counter]['lens'] = $counter;
         $counter+= 1;
        }
-    }else{
-        $send[0]['lens'] = 10; 
-        
     }
+       
     echo json_encode($send);
 ?>

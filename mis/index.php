@@ -50,7 +50,12 @@
                         <a class="dropdown-item" href="./accountinglog.php">Accounting</a>
                         <a class="dropdown-item" href="./hrlog.php">Human Resource</a>                        </div>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./records.php">Records</a>
+                    </li>
                 </ul>
+               
+
             <ul class="navbar-nav ml-auto d-flex flex-row">
                 <li class="nav-item">
                     <a class="nav-link dropdown-toggle waves-effect waves-light" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-user" aria-hidden="true"></i>

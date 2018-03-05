@@ -136,7 +136,6 @@
             username = angular.element($event.currentTarget).parent().parent().parent().find("span").text();
             console.log(username);
             Autofill(username);
-           
                 }
 
         $scope.editAcc = function($event){
@@ -284,7 +283,8 @@
                             position: data[x].position,
                             username: data[x].username,
                             office: data[x].office,
-                            status: data[x].stats,      
+                            status: data[x].stats,  
+                            date2: data[x].date2,
                         }
                         $scope.accounts.push(infos);
                     }
@@ -301,6 +301,7 @@
                                 "<td> " + data[x].nam2 + "</td> "+
                                 "<td> " + data[x].reason + " </td>"+
                                 "<td> " + data[x].date + " </td>"+
+                                "<td> " + data[x].stats2 + " </td>" +
                                 "<td><a><span ng-click='deleteEmpHist("+ data[x].idhist +");' data-toggle='modal' data-target='' class='badge badge-danger'><i class='fa fa-trash-o fa-2x' aria-hidden='true'></i></span></a></td>"+
                             "</tr> "
                             )($scope));
@@ -311,7 +312,7 @@
                 if(data[0].lens == 10){
                     $('#empHistory').after($compile(
                         "<tr class='ename'>"+
-                        "<td colspan = 4 style='text-align:center; font-size:3em; color:#ddd; letter-spacing:0.7em;'> NO DATA </td> "+
+                        "<td colspan = 5 style='text-align:center; font-size:3em; color:#ddd; letter-spacing:0.7em;'> NO DATA </td> "+
                     "</tr> "
                     )($scope));
                 }

@@ -250,10 +250,10 @@
                                         <!-- MODALS -->
     <br>
     <div class="col-md-5 offset-1">  
-    <strong><p class="h1-responsive">Manage Employees</p>
-    <strong>{{ Hr }} <br>
-    {{ Supply }} <br>
-    {{ Accounting }}</strong>
+        <strong><p class="h1-responsive">Manage Employees</p>
+        <strong>{{ Hr }} <br>
+        {{ Supply }} <br>
+        {{ Accounting }}</strong>
     </div>
     
                                           <!-- Search form -->
@@ -282,11 +282,12 @@
                 <table class="table table-hover table-responsive-md table-fixed">
                     <thead >
                         <tr>
-                            <th>Full Name</th>
+                            <th style="width:13%;">Full Name</th>
                             <th>Position</th>
                             <th>Username</th>
                             <th>Office</th>
                             <th>Status</th>
+                            <th style="width:20%;">Contract Started</th>
                             <th>Action</th>
 
                             
@@ -302,6 +303,7 @@
                             <td><span> {{ person.username }} </span></td>
                             <td> {{ person.office }} </td>
                             <td>{{ person.status }}</td>
+                            <td>{{ person.date2 }}</td>
                             <td><a><span ng-click='editAcc($event);' data-toggle='modal' data-target='#modalEdit' class='badge badge-warning edititem'><i class='fa fa-pencil fa-2x' aria-hidden='true'></i></span></a> <a><span ng-click='removeAcc($event);' data-toggle='modal' data-target='#modalRem' class='badge badge-danger'><i class='fa fa-trash-o fa-2x' aria-hidden='true'></i></span></a></td>
                         </tr> 
                     </tbody>

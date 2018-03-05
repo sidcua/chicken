@@ -58,7 +58,8 @@
                         <tr>
                             <th>Name</th>
                             <th>Reason</th>
-                            <th>Date</th>
+                            <th style="width:25%;">Date</th>
+                            <th>Status</th>
                             <th>Action</th>
                         </tr>
                     </thead>
