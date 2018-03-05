@@ -1,6 +1,8 @@
 <?php 
 	session_start();
+	$_SESSION['dept'] = "Accounting";
 	include 'php/checksession.php';
+    include '../php/checkoffice.php';
 ?>
 <!DOCTYPE html>
 <html>
@@ -29,8 +31,18 @@
 			<div class="divspace"></div>
 			<div class="row">
 				<div class="col-sm-12">
-					<div class="d-flex flex-row-reverse">
-						<div class="md-form">
+					<div class="d-flex justify-content-end">
+                        <div class="md-form" style="margin-top: 10px; margin-right: 70px;">
+							<label for="slctmonth">Month</label>
+                            <select id="slctmonth" onchange="month(this.value)" class="form-control" style="margin-left: 50px;">
+                            </select>
+						</div>
+                        <div class="md-form" style="margin-top: 10px;">
+							<label for="slctyear">Year</label>
+                            <select id="slctyear" onchange="year(this.value)" class="form-control" style="margin-left: 50px;">
+                            </select>
+						</div>
+						<div class="md-form" style="margin-left: 100px;">
 							<button type="button" data-toggle="modal" data-target="#modalclearexpense" class="btn btn-danger"><i class="fa fa-trash" aria-hidden="true"></i> Clear Expense</button>
 						</div>
 					</div>
@@ -46,6 +58,7 @@
 						            <th>Price</th>
 						            <th>Quantity</th>
 						            <th>Total</th>
+                                    <th>Date</th>
 						        </tr>
 						    </thead>
 						    <input type="hidden" id="itemidholder" value="" />

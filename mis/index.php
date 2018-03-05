@@ -1,3 +1,8 @@
+<?php
+    session_start();
+    $_SESSION['dept'] = "MIS";
+    include '../php/checkoffice.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
