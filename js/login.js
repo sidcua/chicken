@@ -23,7 +23,7 @@ function login(){
 			},
 			success: function(data){
 				data = $.parseJSON(data);
-				localStorage.setItem('name',data.nam);
+				localStorage.setItem('name',data.name);
 				localStorage.setItem('status','true')
 				if(data.access == true){
 					if(data.office == "Supply"){

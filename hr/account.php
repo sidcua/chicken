@@ -1,3 +1,8 @@
+<?php
+    session_start();
+    $_SESSION['dept'] = "HR";
+    include '../php/checkoffice.php';
+?>
 <!DOCTYPE html>
 <html>
 <head>

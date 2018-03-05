@@ -1,6 +1,8 @@
 <?php 
 	session_start();
-    include 'php/checksession.php';
+    $_SESSION['dept'] = "Supply";
+	include 'php/checksession.php';
+    include '../php/checkoffice.php';
 ?>
 <!DOCTYPE html>
 <html>

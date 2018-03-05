@@ -3,18 +3,12 @@
 	include 'connect.php';
 	$action = $_POST['action'];
 	function trans($name, $transaction, $remark, $con){
-		$query = "INSERT INTO stock (item, transaction, remark) VALUES ('$name', '$transaction', '$remark')";
+		$query = "INSERT INTO stock (item, transaction, remark, date) VALUES ('$name', '$transaction', '$remark')";
 		mysqli_query($con, $query);
 	}
 	function expense($name, $price, $quantity, $con){
-		$query = "SELECT item FROM expense WHERE item = '$name'";
-		$result = mysqli_query($con, $query);
-		if(mysqli_num_rows($result) == 0){
-			$query = "INSERT INTO expense (item, price, quantity) VALUES ('$name', '$price', '$quantity')";
-		}
-		else{
-			$query = "UPDATE expense SET quantity = '$quantity', price = '$price' WHERE item = '$name'";	
-		}
+        $date = date('n/j/Y');
+        $query = "INSERT INTO expense (item, price, quantity, date) VALUES ('$name', '$price', '$quantity', '$date')";
 		mysqli_query($con, $query);
 	}
 	if($action == "listitem"){
