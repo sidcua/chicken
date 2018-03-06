@@ -1,5 +1,6 @@
 $(document).ready(function(){
     listsupply();
+    listtransaction();
 })
 function url(){
     return "./php/supplylog.php";
@@ -15,6 +16,20 @@ function listsupply(){
         success: function(data){
             data = $.parseJSON(data);
             $("#tblsupply").html(data);
+        }
+    })
+}
+function listtransaction(){
+    $.ajax({
+        url: url(),
+        method: "post",
+        data: {action: "listtransaction"},
+        beforeSend: function(){
+            $("#tbltransaction").empty();
+        },
+        success: function(data){
+            data = $.parseJSON(data);
+            $("#tbltransaction").html(data);
         }
     })
 }
