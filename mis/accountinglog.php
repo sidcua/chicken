@@ -23,10 +23,32 @@
 
 <?php include './view/header.php'; ?>
 
-<br>
-    <br>
-    <br>
-    <br>
+<div style="margin-top: 100px;"></div>
+    <div class="container">
+        <div class="jumbotron">
+            <h1 class="h1-responsive">Accounting</h1>
+            <p class="lead text-center">Expense</p>
+            <hr class="my-2">
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="d-flex justify-content-end">
+                    <div class="md-form" style="margin-top: 10px; margin-right: 70px;">
+                        <label for="slctmonth">Month</label>
+                        <select id="slctmonth" onchange="month(this.value)" class="form-control" style="margin-left: 50px;">
+                        </select>
+                    </div>
+                    <div class="md-form" style="margin-top: 10px;">
+                        <label for="slctyear">Year</label>
+                        <select id="slctyear" onchange="year(this.value)" class="form-control" style="margin-left: 50px;">
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     <div class="card col-md-12" style="background-color:#1F2739;">  
         <div class="card-body" style="background-color:#1F2739;">
             <div class="table-wrapper-2">
@@ -34,49 +56,14 @@
             <table class="table table-responsive-md table-fixed" style="background-color:#929FBA;">
             <thead>
                 <tr>
-                    <th><h1>Name</h1></th>
-                    <th><h1>Position</h1></th>
-                    <th><h1>Username</h1></th>
-                    <th><h1>Office</h1></th>
+                    <th><h1>Item Name</h1></th>
+                    <th><h1>Price</h1></th>
+                    <th><h1>Quantity</h1></th>
+                    <th><h1>Total</h1></th>
+                    <th><h1>Date</h1></th>
                 </tr>
             </thead>
-            <tbody>
-                <tr>
-                    <td>Google</td>
-                    <td>9518</td>
-                    <td>6369</td>
-                    <td>01:32:50</td>
-                </tr>
-                <tr>
-                    <td>Twitter</td>
-                    <td>7326</td>
-                    <td>10437</td>
-                    <td>00:51:22</td>
-                </tr>
-                <tr>
-                    <td>Amazon</td>
-                    <td>4162</td>
-                    <td>5327</td>
-                    <td>00:24:34</td>
-                </tr>
-            <tr>
-                    <td>LinkedIn</td>
-                    <td>3654</td>
-                    <td>2961</td>
-                    <td>00:12:10</td>
-                </tr>
-            <tr>
-                    <td>CodePen</td>
-                    <td>2002</td>
-                    <td>4135</td>
-                    <td>00:46:19</td>
-                </tr>
-            <tr>
-                    <td>GitHub</td>
-                    <td>4623</td>
-                    <td>3486</td>
-                    <td>00:31:52</td>
-                </tr>
+            <tbody id="tblexpense">
             </tbody>
         </table>
            </div>
@@ -89,6 +76,6 @@
 	  <script type="text/javascript" src="js/mdb/mdb.js"></script>
 	  <script type="text/javascript" src="js/mdb/bootstrap.js"></script>
 	  <script type="text/javascript" src="js/mdb/popper.min.js"></script>
-
+        <script type="text/javascript" src="js/accountinglog.js"></script>
 </body>
 </html>

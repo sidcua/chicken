@@ -24,7 +24,7 @@
 <?php include './view/header.php'; ?>
 
     <div class="col-md-5 offset-1">  
-        <strong><p class="h1-responsive" style="margin-top:20%;">Human Resources</p>
+        <strong><p class="h1-responsive" style="margin-top:20%;">Human Resources</p></strong>
     </div>
     <br>    
     <div class="col-md-5 offset-1">  
