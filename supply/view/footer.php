@@ -18,6 +18,7 @@
                     <li><a href=".">Home</a></li>
                     <li><a href="supply.php">Supply</a></li>
                     <li><a href="distribute.php">Distribution</a></li>
+                    <li><a href="orders.php">Orders</a></li>
                     <li><a href="transaction.php">Transaction</a></li>
                 </ul>
             </div>
