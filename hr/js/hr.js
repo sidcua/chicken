@@ -434,7 +434,7 @@ $("#eoffice").keypress(function (e) {
                             empLen = data[0].len;
                             $('#accounts').after($compile(
                                 "<tr class='sname'>"+
-                                "<td colspan = 7 style='text-align:center; font-size:3em; color:#ddd; letter-spacing:0.7em;'> NO DATA </td> "+
+                                "<td colspan = 7 style='text-align:center; font-size:3em; color:#ddd; letter-spacing:0.7em;'> NO RECORDS </td> "+
                             "</tr> "
                             )($scope));
                         }else if(data[0].len != 0){
@@ -479,7 +479,7 @@ $("#eoffice").keypress(function (e) {
                 if(data[0].lens == 10){
                     $('#empHistory').after($compile(
                         "<tr class='ename'>"+
-                        "<td colspan = 5 style='text-align:center; font-size:3em; color:#ddd; letter-spacing:0.7em;'> NO DATA </td> "+
+                        "<td colspan = 5 style='text-align:center; font-size:3em; color:#ddd; letter-spacing:0.7em;'> NO HISTORY RECORD </td> "+
                     "</tr> "
                     )($scope));
                 }

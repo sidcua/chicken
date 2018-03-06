@@ -213,11 +213,11 @@
 
       <!-- Secion heading -->
       <h1 class="text-center font-bold mt-5 pt-2 mb-3 dark-grey-text wow fadeIn" data-wow-delay="0.2s">
-          <em>About us</em>
+          <em>About Human Resource</em>
       </h1>
 
       <!-- Section description -->
-      <p class="text-center font-up font-bold grey-text mb-5 pb-4 wow fadeIn" data-wow-delay="0.2s">Tourism students with love to travel</p>
+      <p class="text-center font-up font-bold grey-text mb-5 pb-4 wow fadeIn" data-wow-delay="0.2s">Human Capital with Different Employees</p>
 
       <!-- Grid row -->
       <div class="row">
@@ -226,7 +226,7 @@
           <div class="col-xl-5 mr-auto mb-r col-lg-6 wow fadeIn" data-wow-delay="0.4s">
 
               <!-- Image -->
-              <img src="https://mdbootstrap.com/img/Photos/Others/images/53.jpg" class="img-fluid rounded z-depth-1-half"
+              <img src="./img/hr3.png" class="img-fluid rounded z-depth-1-half"
                   alt="My photo">
 
           </div>
@@ -236,16 +236,15 @@
           <div class="col-xl-6 col-lg-6 wow fadeIn" data-wow-delay="0.4s">
 
               <!-- Description -->
-              <p align="justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo animi soluta ratione quisquam, dicta ab
-                  cupiditate iure eaque? Repellendus voluptatum, magni impedit eaque animi maxime.</p>
+              <p align="justify">Human resource management involves developing and administering programs that are designed to increase the effectiveness of an organization or business. It includes the entire spectrum of creating, managing, and cultivating the employer-employee relationship.</p>
 
-              <p align="justify">Nemo animi soluta ratione quisquam, dicta ab cupiditate iure eaque? Repellendus voluptatum, magni impedit
-                  eaque delectus, beatae maxime temporibus maiores quibusdam quasi rem magnam.</p>
+              <p align="justify">For most organizations, agencies, and businesses, the human resources department is responsible for:</p>
 
               <ul>
-                  <li>Nemo animi soluta ratione</li>
-                  <li>Beatae maxime temporibus</li>
-                  <li>Consectetur adipisicing elit</li>
+                  <li>Managing job recruitment, selection, and promotion</li>
+                  <li>Developing and overseeing employee benefits and wellness programs</li>
+                  <li>Promoting employee career development and job training</li>
+                  <li>Providing orientation programs for new hires</li>
               </ul>
 
           </div>
@@ -266,15 +265,14 @@
           <div class="card wow fadeIn" data-wow-delay="0.2s">
 
               <!--Card image-->
-              <img class="img-fluid" src="https://mdbootstrap.com/img/Photos/Others/images/49.jpg" alt="Card image cap">
+              <img class="img-fluid" src="./img/zed.jpg" alt="Card image cap">
 
               <!--Card content-->
               <div class="card-body">
                   <!--Title-->
-                  <h4 class="card-title">Mesmerizing Landscapes</h4>
+                  <h4 class="card-title">Zeddie Charles R. Santos</h4>
                   <!--Text-->
-                  <p class="card-text mb-4">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                  <a href="#" class="font-bold">Read more</a>
+                  <p class="card-text mb-4"><strong>“A mission leads to a situation. A situation leads to a mission.”</strong></p>
               </div>
 
           </div>
@@ -283,25 +281,23 @@
       <!--First columnn-->
 
       <!--Second columnn-->
-      <div class="col-lg-4">
+       <div class="col-lg-4">
           <!--Card-->
-          <div class="card wow fadeIn" data-wow-delay="0.4s">
+          <div class="card wow fadeIn" data-wow-delay="0.2s">
 
               <!--Card image-->
-              <img class="img-fluid" src="https://mdbootstrap.com/img/Photos/Others/images/48.jpg" alt="Card image cap">
+              <img class="img-fluid" src="./img/chard2.jpg" alt="Card image cap">
 
               <!--Card content-->
               <div class="card-body">
                   <!--Title-->
-                  <h4 class="card-title">Top 5 holiday's places</h4>
+                  <h4 class="card-title">Richard Christian A. Villano</h4>
                   <!--Text-->
-                  <p class="card-text mb-4">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                  <a href="#" class="font-bold">Read more</a>
+                  <p class="card-text mb-4"> <strong>“Whatever the mind of man can conceive and believe, it can be achieve.”</strong></p>
               </div>
 
           </div>
           <!--/.Card-->
-
       </div>
       <!--Second columnn-->
 
@@ -311,21 +307,83 @@
           <div class="card wow fadeIn" data-wow-delay="0.6s">
 
               <!--Card image-->
-              <img class="img-fluid" src="https://mdbootstrap.com/img/Photos/Others/images/29.jpg" alt="Card image cap">
+              <img class="img-fluid" src="./img/sid.jpg" alt="Card image cap">
 
               <!--Card content-->
               <div class="card-body">
                   <!--Title-->
-                  <h4 class="card-title">Mountain Rivers</h4>
+                  <h4 class="card-title">Sid Jeric C. Cua</h4>
                   <!--Text-->
-                  <p class="card-text mb-4">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                  <a href="#" class="font-bold">Read more</a>
+                  <p class="card-text mb-4"><strong>Some quick example text to build on the card title and make up the bulk of the card's content.</strong></p>
               </div>
 
           </div>
           <!--/.Card-->
       </div>
       <!--Third columnn-->
+
+        <!--Fourth columnn-->
+        <div class="col-lg-4 mb-4">
+                <!--Card-->
+                <div class="card wow fadeIn" data-wow-delay="0.6s">
+
+                    <!--Card image-->
+                    <img class="img-fluid" src="./img/friel.jpg" alt="Card image cap">
+
+                    <!--Card content-->
+                    <div class="card-body">
+                        <!--Title-->
+                        <h4 class="card-title">Frielzekiel M. Nicolas</h4>
+                        <!--Text-->
+                        <p class="card-text mb-4"><strong>Some quick example text to build on the card title and make up the bulk of the card's content.</strong></p>
+                    </div>
+
+                </div>
+                <!--/.Card-->
+            </div>
+            <!--Fourth columnn-->      
+
+              <!--Fifth columnn-->
+        <div class="col-lg-4 mb-4">
+            <!--Card-->
+            <div class="card wow fadeIn" data-wow-delay="0.6s">
+
+                <!--Card image-->
+                <img class="img-fluid" src="./img/kiram.jpg" alt="Card image cap">
+
+                <!--Card content-->
+                <div class="card-body">
+                    <!--Title-->
+                    <h4 class="card-title">Abdullah M. Kiram</h4>
+                    <!--Text-->
+                    <p class="card-text mb-4"><strong>Some quick example text to build on the card title and make up the bulk of the card's content.</strong></p>
+                </div>
+
+            </div>
+            <!--/.Card-->
+        </div>
+            <!--Fifth columnn-->
+
+              <!--Sixth columnn-->
+        <div class="col-lg-4 mb-4">
+            <!--Card-->
+            <div class="card wow fadeIn" data-wow-delay="0.6s">
+
+                <!--Card image-->
+                <img class="img-fluid" src="./img/ben.jpg" alt="Card image cap">
+
+                <!--Card content-->
+                <div class="card-body">
+                    <!--Title-->
+                    <h4 class="card-title">Benrasheed M. Salim</h4>
+                    <!--Text-->
+                    <p class="card-text mb-4"><strong>Some quick example text to build on the card title and make up the bulk of the card's content.</strong></p>
+                </div>
+
+            </div>
+            <!--/.Card-->
+        </div>
+        <!--Sixth columnn-->
   </div>
 </div>
 <!--/.Content-->

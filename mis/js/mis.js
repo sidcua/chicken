@@ -285,7 +285,7 @@
               if(data[0].lenss == 10){
                 $('#emphist').after($compile(
                     "<tr class='emname'>"+
-                    "<td colspan = 4 style='text-align:center; font-size:3em; color:#ddd; letter-spacing:0.7em;'> NO DATA </td> "+
+                    "<td colspan = 4 style='text-align:center; font-size:3em; color:#ddd; letter-spacing:0.7em;'> NO HISTORY RECORDS </td> "+
                 "</tr> "
                 )($scope));
              }
@@ -308,8 +308,7 @@
                             empLog = data[0].emlen;
                             $('#haccounts').after($compile(
                                 "<tr class='hname'>"+
-                                "<td colspan = 6 style='text-align:center; font-size:3em; color:#ddd; letter-spacing:0.7em;'> NO DATA </td> "+
-                            "</tr> "
+                                "<td colspan = 6 style='text-align:center; font-size:3em; color:#ddd; letter-spacing:0.7em;'> NO EMPLOYEE RECORDS </td> "+ "</tr> "
                             )($scope));
                         }else if(data[0].emlen != 0){
                     $('#tableacc').children('.hname').remove();
@@ -371,7 +370,7 @@
                     $('#tabletrans').html("");
                     $('#tabletrans').after($compile(
                         "<tr class='tname'>"+
-                        "<td colspan = 6 style='text-align:center; font-size:3em; color:#ddd; letter-spacing:0.7em;'> NO DATA </td> "+
+                        "<td colspan = 6 style='text-align:center; font-size:3em; color:#ddd; letter-spacing:0.7em;'> NO TRANSACTIONS </td> "+
                         "</tr> "
                     )($scope));
                 }

@@ -1,6 +1,6 @@
 <?php
     session_start();
-    include 'connect.php';
+    include '../../php/connect.php';
     $action = $_POST['action'];
     if($action == "listsupply"){
         $output = "";
@@ -10,7 +10,7 @@
             $output .= '<tr><td colspan="3"><p class="text-center">No items found</p></td></tr>';
         }
         else{
-            while($fetch = mysqli_fetch_assoc($result)){
+            while($fetch = $result->fetch_assoc()){
                 $item = $fetch['name'];
                 $price = $fetch['price'];
                 $quantity = $fetch['quantity'];

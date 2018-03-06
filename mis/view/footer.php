@@ -12,28 +12,27 @@
                         <strong>Company name</strong>
                     </h6>
                     <hr class="blue mb-4 pb-1 mt-0 d-inline-block mx-auto" style="width: 60px;">
-                    <p>Here you can use rows and columns here to organize your footer content. Lorem ipsum dolor sit amet, consectetur
-                        adipisicing elit.</p>
+                    <p>Chicken Dinner</p>
                 </div>
                 <!--/.First column-->
 
                 <!--Second column-->
                 <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-r">
                     <h6 class="title font-bold">
-                        <strong>Products</strong>
+                        <strong>Offices</strong>
                     </h6>
                     <hr class="blue mb-4 pb-1 mt-0 d-inline-block mx-auto" style="width: 60px;">
                     <p>
-                        <a href="#!">MDBootstrap</a>
+                        Human Resource Office
                     </p>
                     <p>
-                        <a href="#!">MDWordPress</a>
+                        Accounting Office
                     </p>
                     <p>
-                        <a href="#!">BrandFlow</a>
+                        Supply Office
                     </p>
                     <p>
-                        <a href="#!">Bootstrap Angular</a>
+                        MIS Office
                     </p>
                 </div>
                 <!--/.Second column-->
@@ -41,21 +40,16 @@
                 <!--Third column-->
                 <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-r">
                     <h6 class="title font-bold">
-                        <strong>Useful links</strong>
+                        <strong>Company Quotes</strong>
                     </h6>
                     <hr class="blue mb-4 pb-1 mt-0 d-inline-block mx-auto" style="width: 60px;">
                     <p>
-                        <a href="#!">Your Account</a>
+                        As a Company grows, communication becomes its biggest challenge.
                     </p>
                     <p>
-                        <a href="#!">Become an Affiliate</a>
+                        Good company and good discourse are the very sinews of virtue.
                     </p>
-                    <p>
-                        <a href="#!">Shipping Rates</a>
-                    </p>
-                    <p>
-                        <a href="#!">Help</a>
-                    </p>
+                  
                 </div>
                 <!--/.Third column-->
 
@@ -66,13 +60,13 @@
                     </h6>
                     <hr class="blue mb-4 pb-1 mt-0 d-inline-block mx-auto" style="width: 60px;">
                     <p>
-                        <i class="fa fa-home mr-3"></i> New York, NY 10012, US</p>
+                        <i class="fa fa-home mr-3"></i> Zamboanga, Zamboanga Del Sur, Philippines</p>
                     <p>
-                        <i class="fa fa-envelope mr-3"></i> info@example.com</p>
+                        <i class="fa fa-envelope mr-3"></i> chickendinner@gmail.com</p>
                     <p>
-                        <i class="fa fa-phone mr-3"></i> + 01 234 567 88</p>
+                        <i class="fa fa-phone mr-3"></i> + 997788451</p>
                     <p>
-                        <i class="fa fa-print mr-3"></i> + 01 234 567 89</p>
+                        <i class="fa fa-print mr-3"></i> + 998557412</p>
                 </div>
                 <!--/.Fourth column-->
 
@@ -83,7 +77,7 @@
         <!-- Copyright-->
         <div class="footer-copyright">
             <div class="container-fluid">
-                © 2017 Copyright:
+                © 2018 Copyright:
                 <a href="">
                     <strong> Chicken Dinner </strong>
                 </a>
