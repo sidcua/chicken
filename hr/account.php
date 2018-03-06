@@ -52,8 +52,11 @@
                     <input type="text" ng-model="modPosition" name="eposition" id="eposition" class="form-control" list="posList">
                     <label class="active" for="eposition" style="height:20px;">Position</label>
                     <datalist id="posList">
-                        <option value="Admin">
-                        <option value="User">
+                    <option value="Office Manager">
+                    <option value="Professional Staff">
+                    <option value="Accountant">
+                    <option value="Secretary">
+                    <option value="Treasurer">
                     </datalist>
                 </div>
 
@@ -110,8 +113,11 @@
                             <input type="text" name="position" id="position" class="form-control" list="posList">
                             <label for="position" style="height:20px;">Position</label>
                             <datalist id="posList">
-                                <option value="Admin">
-                                <option value="User">
+                                <option value="Office Manager">
+                                <option value="Professional Staff">
+                                <option value="Accountant">
+                                <option value="Secretary">
+                                <option value="Treasurer">
                             </datalist>
                         </div>
 

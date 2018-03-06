@@ -9,7 +9,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Management Information System</title>
+    <title>MIS</title>
     <link rel="stylesheet" type="text/css" href="css/mdb/bootstrap.css" />
     <link rel="stylesheet" type="text/css" href="css/mdb/mdb.css" />
     <link rel="stylesheet" type="text/css" href="css/mdb/font-awesome.css" />
@@ -55,16 +55,20 @@
                         <a class="dropdown-item" href="./accountinglog.php">Accounting</a>
                         <a class="dropdown-item" href="./hrlog.php">Human Resource</a>                        </div>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="./records.php">Records</a>
-                    </li>
+                   
                 </ul>
                
 
             <ul class="navbar-nav ml-auto d-flex flex-row">
                 <li class="nav-item">
                     <a class="nav-link dropdown-toggle waves-effect waves-light" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-user" aria-hidden="true"></i>
-                    <strong><span class="mr-lg-2" style='color:white' id="pname"></strong></span>                 
+                    <strong>
+                    <!-- <span class="mr-lg-2" style='color:white' id="pname"> -->
+                    <?php
+                    echo $_SESSION['name'];
+                    ?>
+                    </strong>
+                    </span>                 
                     </a>
                     <div class="dropdown-menu dropdown-menu-right dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
                         <a class="dropdown-item waves-effect waves-light" aria-hidden="false" data-toggle="modal" data-target="#modalConfirmLog" >Logout</a>

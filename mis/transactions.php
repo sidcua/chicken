@@ -1,6 +1,6 @@
 <?php
     session_start();
-    $_SESSION['dept'] = "HR";
+    $_SESSION['dept'] = "MIS";
     include '../php/checkoffice.php';
 ?>
 <!DOCTYPE html>
@@ -9,7 +9,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Management Information System</title>
+    <title>MIS</title>
     <link rel="stylesheet" type="text/css" href="css/mdb/bootstrap.css" />
     <link rel="stylesheet" type="text/css" href="css/mdb/mdb.css" />
     <link rel="stylesheet" type="text/css" href="css/mdb/font-awesome.css" />

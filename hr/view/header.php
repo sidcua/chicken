@@ -37,7 +37,12 @@
         <ul class="navbar-nav ml-auto d-flex flex-row">
         <li class="nav-item">
             <a class="nav-link dropdown-toggle waves-effect waves-light white-text" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-user white-text" aria-hidden="true"></i>
-            <strong><span class="mr-lg-2" style='color:white' id="pname"></strong></span>        
+            <strong>
+                <!-- <span class="mr-lg-2" style='color:white' id="pname"></span> -->
+                <?php
+                    echo $_SESSION['name'];
+                ?>
+                </strong>   
             </a>
             <div class="dropdown-menu dropdown-menu-right dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
                 
