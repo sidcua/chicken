@@ -1,5 +1,172 @@
 
 //======================================================
+//                         JQUERY
+//======================================================
+$(document).ready(()=>{
+
+  //disregard special characters but allow spaces in name
+  $('#fname').on('keypress', function (event) {
+    var regex = new RegExp("^[0-9a-zA-Z \b]+$");
+    var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
+    if (!regex.test(key)) {
+            return false;
+    event.preventDefault();
+    return false;
+    }
+});
+
+//disregard digits in name
+$("#fname").keypress(function (e) {
+    if (e.which > 47 && e.which < 58){
+        return false;
+    e.preventDefault();
+    return false;
+    }
+});
+
+//disregard special characters but allow spaces in edit name
+$('#efname').on('keypress', function (event) {
+    var regex = new RegExp("^[0-9a-zA-Z \b]+$");
+    var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
+    if (!regex.test(key)) {
+            return false;
+    event.preventDefault();
+    return false;
+    }
+});
+
+//disregard digits in edit name
+$("#efname").keypress(function (e) {
+    if (e.which > 47 && e.which < 58){
+        return false;
+    e.preventDefault();
+    return false;
+    }
+});
+
+ //disregard special characters but allow spaces in position
+ $('#position').on('keypress', function (event) {
+    var regex = new RegExp("^[0-9a-zA-Z \b]+$");
+    var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
+    if (!regex.test(key)) {
+            return false;
+    event.preventDefault();
+    return false;
+    }
+});
+
+//disregard digits in position
+$("#position").keypress(function (e) {
+    if (e.which > 47 && e.which < 58){
+        return false;
+    e.preventDefault();
+    return false;
+    }
+});
+
+ //disregard special characters but allow spaces in edit position
+ $('#eposition').on('keypress', function (event) {
+    var regex = new RegExp("^[0-9a-zA-Z \b]+$");
+    var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
+    if (!regex.test(key)) {
+            return false;
+    event.preventDefault();
+    return false;
+    }
+});
+
+//disregard digits in edit position
+$("#eposition").keypress(function (e) {
+    if (e.which > 47 && e.which < 58){
+        return false;
+    e.preventDefault();
+    return false;
+    }
+});
+
+
+//disregard special characters but allow spaces in username
+$('#username').on('keypress', function (event) {
+    var regex = new RegExp("^[0-9a-zA-Z \b]+$");
+    var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
+    if (!regex.test(key)) {
+            return false;
+    event.preventDefault();
+    return false;
+    }
+});
+
+//disregard special characters but allow spaces in password
+$('#password').on('keypress', function (event) {
+    var regex = new RegExp("^[0-9a-zA-Z \b]+$");
+    var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
+    if (!regex.test(key)) {
+            return false;
+    event.preventDefault();
+    return false;
+    }
+});
+
+//disregard special characters but allow spaces in cpassword
+$('#cpassword').on('keypress', function (event) {
+    var regex = new RegExp("^[0-9a-zA-Z \b]+$");
+    var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
+    if (!regex.test(key)) {
+            return false;
+    event.preventDefault();
+    return false;
+    }
+});
+
+
+//disregard digits in office
+$("#office").keypress(function (e) {
+    if (e.which > 47 && e.which < 58){
+        return false;
+    e.preventDefault();
+    return false;
+    }
+});
+
+//disregard special characters but allow spaces in office
+$('#office').on('keypress', function (event) {
+    var regex = new RegExp("^[0-9a-zA-Z \b]+$");
+    var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
+    if (!regex.test(key)) {
+            return false;
+    event.preventDefault();
+    return false;
+    }
+});
+
+ //disregard special characters but allow spaces in edit office
+ $('#eoffice').on('keypress', function (event) {
+    var regex = new RegExp("^[0-9a-zA-Z \b]+$");
+    var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
+    if (!regex.test(key)) {
+            return false;
+    event.preventDefault();
+    return false;
+    }
+});
+
+//disregard digits in edit office
+$("#eoffice").keypress(function (e) {
+    if (e.which > 47 && e.which < 58){
+        return false;
+    e.preventDefault();
+    return false;
+    }
+});
+
+
+});
+
+
+
+
+
+//======================================================
 //                         ANGULAR
 //======================================================
 
@@ -267,7 +434,7 @@
                             empLen = data[0].len;
                             $('#accounts').after($compile(
                                 "<tr class='sname'>"+
-                                "<td colspan = 6 style='text-align:center; font-size:3em; color:#ddd; letter-spacing:0.7em;'> NO DATA </td> "+
+                                "<td colspan = 7 style='text-align:center; font-size:3em; color:#ddd; letter-spacing:0.7em;'> NO DATA </td> "+
                             "</tr> "
                             )($scope));
                         }else if(data[0].len != 0){

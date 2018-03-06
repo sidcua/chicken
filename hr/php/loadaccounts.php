@@ -19,7 +19,7 @@
         $send[$counter]["username"] = $row["username"];
         $send[$counter]["office"] = $row["office"];
         $send[$counter]["date2"] = $row["date"];        
-        $send[$counter]["stats"] = "Approve";
+        $send[$counter]["stats"] = "Approved";
         $counter+= 1;
         $send[0]["len"] = $counter;
        }

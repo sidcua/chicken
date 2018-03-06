@@ -11,7 +11,8 @@
     var id = "";
     var empLens = -1;
     var datalen = 0;
-    var empLog = 0;
+    var empHistLen = 0;
+    var empLog = -1;
     app.controller("ctrlMIS", function($scope,$compile,$timeout){
 
         $scope.modFname = "";        
@@ -19,6 +20,7 @@
         $scope.modOffice = "";
         $scope.person = [];        
         $scope.person2 = [];
+        $scope.person3 = [];        
         $scope.employee = [];
         
         $scope.offices = [
@@ -174,9 +176,9 @@
 
         }
 
-            function totalEmployees(){
+            function totalEmployee(){
                 $.ajax({
-                    url:'./php/totalemp.php',
+                    url:'./php/totalEmp.php',
                     dataType: 'JSON',
                     type: 'GET',
                     success:function(data){
@@ -209,32 +211,32 @@
         //         });
         //     }
 
-        $scope.addEmp = function(){
-            var contents = $('#addEmpForm').serialize();
-            console.log(contents);
-            $.ajax({
-                url: './php/addemployee.php',
-                dataType: 'JSON',
-                type: 'POST',
-                data: contents,
-                cache: false,
-                success: function(data){
-                  if(data.match && data.exist && data.check && data.leng == true){
-                    messageBox(data.titles,data.message,true);  
-                    addClear();
-                    $('#modalReg').modal('hide');
-                    $scope.clearTable();
-                    $scope.refresh();
-                    $scope.$apply();
-                  }else{
-                    messageBox(data.titles,data.message,true);                    
-                  }
-            },
-                error: function(a,b,c){
-                    console.log('Error: ' + a + " " + b + " " + c);
-                }
-            });
-        }
+        // $scope.addEmp = function(){
+        //     var contents = $('#addEmpForm').serialize();
+        //     console.log(contents);
+        //     $.ajax({
+        //         url: './php/addemployee.php',
+        //         dataType: 'JSON',
+        //         type: 'POST',
+        //         data: contents,
+        //         cache: false,
+        //         success: function(data){
+        //           if(data.match && data.exist && data.check && data.leng == true){
+        //             messageBox(data.titles,data.message,true);  
+        //             addClear();
+        //             $('#modalReg').modal('hide');
+        //             $scope.clearTable();
+        //             $scope.refresh();
+        //             $scope.$apply();
+        //           }else{
+        //             messageBox(data.titles,data.message,true);                    
+        //           }
+        //     },
+        //         error: function(a,b,c){
+        //             console.log('Error: ' + a + " " + b + " " + c);
+        //         }
+        //     });
+        // }
         // $scope.deleteEmpHist = function(id){
         //     var formData = new FormData();
         //     formData.append('id',id);
@@ -257,16 +259,62 @@
         //     });
         // }
 
+        
+
+        function loadEmphist(){
+            $.ajax({
+                url: './php/loadEmphist.php',
+                dataType: 'JSON',
+                type: 'GET',
+                success: function(data){
+                    if( data[data.length-1].lenss != empHistLen || data[0].lenss == 10){
+                        empHistLen = data[data.length-1].lenss;
+                        $('#tableemphist').children('.emname').remove();
+                        $scope.accounts3= [];
+                        for(var x = 0; x < data.length; x++){
+                            var info = {
+                        empname: data[x].empname,                            
+                        empreason: data[x].empreason,
+                        empdate: data[x].empdate,
+                        empstatus: data[x].empstats,                            
+                    }
+                    $scope.accounts3.push(info);
+                }
+                $scope.$apply();
+              }
+              if(data[0].lenss == 10){
+                $('#emphist').after($compile(
+                    "<tr class='emname'>"+
+                    "<td colspan = 4 style='text-align:center; font-size:3em; color:#ddd; letter-spacing:0.7em;'> NO DATA </td> "+
+                "</tr> "
+                )($scope));
+             }
+            },
+                error: function(a, b, c){
+                    console.log("error: " + a + b + c);
+                }
+            });
+    }
+
+
          function loadEmp(){
                 $.ajax({
                     url: './php/loadEmp.php',
                     dataType: 'JSON',
                     type: 'GET',
                     success: function(data){
-                        if(data[data.length-1].len != empLog || data[0].len == 10){
-                            empLog = data[data.length-1].len;
-                            console.log(empLog + " " + data.length);
+                        if(data[0].emlen == 0 && empLog != data[0].emlen){
                             $('#tableacc').children('.hname').remove();
+                            empLog = data[0].emlen;
+                            $('#haccounts').after($compile(
+                                "<tr class='hname'>"+
+                                "<td colspan = 6 style='text-align:center; font-size:3em; color:#ddd; letter-spacing:0.7em;'> NO DATA </td> "+
+                            "</tr> "
+                            )($scope));
+                        }else if(data[0].emlen != 0){
+                    $('#tableacc').children('.hname').remove();
+                    console.log(data[0].nam);
+                    empLog = data[0].emlen; 
                             $scope.accounts2 = [];
                             for(var x = 0; x < data.length; x++){
                                 var info = {
@@ -277,14 +325,13 @@
                         }
                         $scope.accounts2.push(info);
                     }
-                    $scope.$apply();
+                    $scope.$digest();
                   }
                 },
                     error: function(a, b, c){
                         console.log("error: " + a + b + c);
                     }
                 });
-               
         }
 
         $scope.refresh = function(){
@@ -296,6 +343,8 @@
                     type: 'GET',
                     success: function(data){
                         loadEmp();      
+                        loadEmphist();
+                        totalEmployee();
                         console.log(data);
                         console.log("outer:" + empLens + " " + data.length);                  
                         if(empLens != data.length && data[0].lens == 0){

@@ -105,7 +105,7 @@
                 <div class="modal-body mb-0">
                     <div class="md-form form-sm">
                         <i class="fa fa-envelope prefix"></i>
-                        <input type="text" ng-model="modFname" id="empname" name="empname" class="form-control">
+                        <input type="text" ng-model="modFname" id="empname" name="empname" class="form-control" >
                         <label for="empname" style="height:20px;">Name of Employee</label>
                     </div>
 

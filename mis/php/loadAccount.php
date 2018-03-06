@@ -23,7 +23,7 @@
         if($row["status"] == 0){
             $send[$counter]["stats"] = "Pending";
         }else{
-            $send[$counter]["stats"] = "Approve";
+            $send[$counter]["stats"] = "Approved";
         }
         $send[$counter]['lens'] = $counter;
         $counter+= 1;
