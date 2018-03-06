@@ -13,9 +13,8 @@ function listsupply(){
             $("#tblsupply").empty();
         },
         success: function(data){
-            alert(data)
             data = $.parseJSON(data);
-            $("tblsupply").html(data);
+            $("#tblsupply").html(data);
         }
     })
 }
