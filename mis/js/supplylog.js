@@ -16,8 +16,6 @@ function listsupply(){
         success: function(data){
             data = $.parseJSON(data);
             $("#tblsupply").html(data);
-<<<<<<< HEAD
-=======
         }
     })
 }
@@ -32,7 +30,6 @@ function listtransaction(){
         success: function(data){
             data = $.parseJSON(data);
             $("#tbltransaction").html(data);
->>>>>>> 5a5f769539a2bc04cca1fd0803590810684255ca
         }
     })
 }

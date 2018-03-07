@@ -23,14 +23,17 @@
     
 <?php include './view/header.php'; ?>
 
-    <div class="col-md-5 offset-1">  
-        <strong><p class="h1-responsive" style="margin-top:20%;">Human Resources</p></strong>
+<div style="margin-top: 100px;"></div>
+<div class="container">
+    <div class="jumbotron">
+        <h1 class="h1-responsive">Human Resource</h1>
+        <hr class="my-2">
     </div>
-    <br>    
+</div>
     <div class="col-md-5 offset-1">  
-        <strong>{{ Hr }} <br>
+        <h3><strong>{{ Hr }} <br>
         {{ Supply }} <br>
-        {{ Accounting }}</strong>
+        {{ Accounting }}</strong></h3>
     </div>
     <br>
     <div class="container">
