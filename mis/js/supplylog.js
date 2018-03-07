@@ -33,3 +33,9 @@ function listtransaction(){
         }
     })
 }
+function printsupply(){
+    window.open("print.php?print=supply")
+}
+function printtransaction(){
+    window.open("print.php?print=transaction")
+}

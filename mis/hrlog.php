@@ -51,7 +51,12 @@
     <div class="tab-content card">
             <!--Panel 1-->
          <div class="tab-pane fade in show active" id="panel1" role="tabpanel">
-            <div class="card col-md-12" style="background-color:#1F2739;">   
+             <div class="card col-md-12" style="background-color:#1F2739;"> 
+                    <div class="d-flex justify-content-end">
+                    <button type="button" onclick="printemplist()" class="btn btn-outline-info waves-effect"><i class="fa fa-print" aria-hidden="true"></i> Print</button>
+                </div>
+            <div class="card col-md-12" style="background-color:#1F2739;">
+                
                 <div class="card-body" style="background-color:#1F2739;">
                     <div class="table-wrapper-2">
 
@@ -79,11 +84,15 @@
                 </div>
             </div>
         </div>
+        </div>
         <!--Panel 1-->
 
             <!--Panel 2-->
             <div class="tab-pane fade" id="panel2" role="tabpanel">
-                <div class="card col-md-12" style="background-color:#1F2739;">   
+                <div class="card col-md-12" style="background-color:#1F2739;"> 
+                     <div class="d-flex justify-content-end">
+                    <button type="button" onclick="printemphist()" class="btn btn-outline-info waves-effect"><i class="fa fa-print" aria-hidden="true"></i> Print</button>
+                </div>
                     <div class="card-body" style="background-color:#1F2739;">
                         <div class="table-wrapper-2">
 
@@ -113,12 +122,19 @@
             </div>
             <!--/.Panel 2-->
     </div>
-
         <?php include './view/footer.php'; ?>
-            <script type="text/javascript" src="js/mdb/jquery-3.2.1.min.js"></>
+            <script type="text/javascript" src="js/mdb/jquery-3.2.1.min.js"></script>
             <script type="text/javascript" src="js/mdb/mdb.js"></script>
             <script type="text/javascript" src="js/mdb/bootstrap.js"></script>
             <script type="text/javascript" src="js/mdb/popper.min.js"></script>
 
 </body>
 </html>
+<script>
+    function printemplist(){
+        window.open("print.php?print=emplist");
+    }
+    function printemphist(){
+        window.open("print.php?print=emphist")
+    }
+</script>

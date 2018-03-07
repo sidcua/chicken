@@ -50,6 +50,9 @@
         </div>
     </div>
     <div class="card col-md-12" style="background-color:#1F2739;">  
+        <div class="d-flex justify-content-end">
+                    <button type="button" onclick="print()" class="btn btn-outline-info waves-effect"><i class="fa fa-print" aria-hidden="true"></i> Print</button>
+                </div>
         <div class="card-body" style="background-color:#1F2739;">
             <div class="table-wrapper-2">
 

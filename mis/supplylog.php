@@ -45,7 +45,10 @@
     <div class="tab-content card">
             <!--Panel 1-->
          <div class="tab-pane fade in show active" id="panel1" role="tabpanel">
-            <div class="card col-md-12" style="background-color:#1F2739;">  
+            <div class="card col-md-12" style="background-color:#1F2739;">
+                <div class="d-flex justify-content-end">
+                    <button type="button" onclick="printsupply()" class="btn btn-outline-info waves-effect"><i class="fa fa-print" aria-hidden="true"></i> Print</button>
+                </div>
                 <div class="card-body" style="background-color:#1F2739;">
                     <div class="table-wrapper-2" >
 
@@ -68,7 +71,10 @@
 
             <!--Panel 2-->
             <div class="tab-pane fade" id="panel2" role="tabpanel">
-                <div class="card col-md-12" style="background-color:#1F2739;">  
+                <div class="card col-md-12" style="background-color:#1F2739;"> 
+                    <div class="d-flex justify-content-end">
+                    <button type="button" onclick="printtransaction()" class="btn btn-outline-info waves-effect"><i class="fa fa-print" aria-hidden="true"></i> Print</button>
+                </div>
                 <div class="card-body" style="background-color:#1F2739;">
                     <div class="table-wrapper-2" >
 

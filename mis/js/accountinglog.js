@@ -62,3 +62,8 @@ function month(month){
 function year(year){
     listexpense($("#slctmonth").val(), year);
 }
+function print(){
+    var month = $("#slctmonth").val();
+    var year = $("#slctyear").val();
+    window.open("print.php?print=expense&month=" + month + "&year=" + year);
+}
