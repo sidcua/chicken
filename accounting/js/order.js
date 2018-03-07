@@ -46,6 +46,9 @@ function addorder(){
     else if(!quantity.value.trim()){
         $("#errormsgaddorder").text("Quantity required");
     }
+    else if(quantity.value < 1){
+        $("#errormsgaddorder").text("Quantity error");
+    }
     else{
         $.ajax({
             url: url(),

@@ -94,7 +94,7 @@
                     <select id="slctitem" class="form-control"></select>
                 </div>
 				<div class="md-form">
-				    <input type="number" id="txtquantity" class="form-control">
+				    <input type="number" min="1" id="txtquantity" class="form-control">
 				    <label for="txtquantity" class="">Quantity</label>
 				</div>
             </div>
