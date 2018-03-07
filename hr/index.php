@@ -77,7 +77,6 @@
       <li data-target="#carousel-example-3" data-slide-to="1"></li>
       <li data-target="#carousel-example-3" data-slide-to="2"></li>
       <li data-target="#carousel-example-3" data-slide-to="3"></li>
-      <li data-target="#carousel-example-3" data-slide-to="4"></li>
   </ol>
   <!--/.Indicators-->
 
@@ -85,7 +84,7 @@
   <div class="carousel-inner" role="listbox">
 
       <!-- First slide -->
-      <div class="carousel-item active view hm-black-light" style="background-repeat: no-repeat; background-size: cover;"><img src="./img/Hr.jpg" style="width:100%; height:100%; margin:auto; margin-top: -10px;">
+      <div class="carousel-item active view hm-black-light" style="background-repeat: no-repeat; background-size: cover;"><img src="./img/background4.jpg" style="width:100%; height:100%; margin:auto; margin-top: -10px; object-fit: cover;">
           <!-- Caption -->
           <div class="full-bg-img flex-center white-text">
               <ul class="animated fadeIn col-md-12">
@@ -105,49 +104,9 @@
       </div>
       <!--/.First slide-->
 
-      <!-- Second slide -->
-      <div class="carousel-item view hm-black-light" style="background-repeat: no-repeat; background-size: cover;"><img src="./img/Hr.png" style="width:100%; height:100%; margin:auto; margin-top: -10px;">
+     
 
-          <!-- Caption -->
-          <div class="full-bg-img flex-center white-text">
-              <ul class="animated fadeIn col-md-12">
-                  <li>
-                      <!-- <h1 class="h1-responsive font-bold">10 Reasons you should spend winter holiday in mountains </h1> -->
-                  </li>
-                  <li>
-                      <!-- <p>Best atractions and winter sports!</p> -->
-                  </li>
-                  <li>
-                      <!-- <a target="_blank" href="https://mdbootstrap.com/bootstrap-tutorial/" class="btn btn-outline-white" rel="nofollow">Read more</a> -->
-                  </li>
-              </ul>
-          </div>
-          <!-- /.Caption -->
-
-      </div>
-      <!--/.Second slide -->
-
-      <!-- Third slide -->
-      <div class="carousel-item view hm-black-slight" style="background-repeat: no-repeat; background-size: cover;"><img src="./img/Hr2.png" style="width:100%; height:100%; margin:auto; margin-top: -10px;">
-
-          <!-- Caption -->
-          <div class="full-bg-img flex-center white-text">
-              <ul class="animated fadeIn col-md-12">
-                  <li>
-                      <!-- <h1 class="h1-responsive font-bold">Weekend in the nature - the best way to relax</h1> -->
-                  </li>
-                  <li>
-                      <!-- <p>8 Reasons why you need to spend more time in nature</p> -->
-                  </li>
-                  <li>
-                      <!-- <a target="_blank" href="https://mdbootstrap.com/forums/forum/support/" class="btn btn-outline-white" rel="nofollow">Read more</a> -->
-                  </li>
-              </ul>
-          </div>
-          <!-- /.Caption -->
-
-      </div>
-      <!--/.Third slide-->
+     
       <div class="carousel-item view hm-black-slight" style="background-repeat: no-repeat; background-size: cover;"><img src="./img/background4.jpg" style="width:100%; height:100%; margin:auto; margin-top: -10px;">
 
           <!-- Caption -->
@@ -168,6 +127,25 @@
 
       </div>
       <div class="carousel-item view hm-black-slight" style="background-repeat: no-repeat; background-size: cover;"><img src="./img/background5.jpg" style="width:100%; height:100%; margin:auto; margin-top: -10px; object-fit: cover;">
+
+          <!-- Caption -->
+          <div class="full-bg-img flex-center white-text">
+              <ul class="animated fadeIn col-md-12">
+                  <li>
+                      <!-- <h1 class="h1-responsive font-bold">Weekend in the nature - the best way to relax</h1> -->
+                  </li>
+                  <li>
+                      <!-- <p>8 Reasons why you need to spend more time in nature</p> -->
+                  </li>
+                  <li>
+                      <!-- <a target="_blank" href="https://mdbootstrap.com/forums/forum/support/" class="btn btn-outline-white" rel="nofollow">Read more</a> -->
+                  </li>
+              </ul>
+          </div>
+          <!-- /.Caption -->
+
+      </div>
+      <div class="carousel-item view hm-black-slight" style="background-repeat: no-repeat; background-size: cover;"><img src="./img/hr2.jpg" style="width:100%; height:100%; margin:auto; margin-top: -10px;">
 
           <!-- Caption -->
           <div class="full-bg-img flex-center white-text">
@@ -314,7 +292,7 @@
                   <!--Title-->
                   <h4 class="card-title">Sid Jeric C. Cua</h4>
                   <!--Text-->
-                  <p class="card-text mb-4"><strong>“Whatever the mind of man can conceive and believe, it can be achieve.”</strong></p>
+                  <p class="card-text mb-4"><strong>“In the business world, the rearview mirror is always clearer than the windshield.”</strong></p>
               </div>
 
           </div>
@@ -335,7 +313,7 @@
                         <!--Title-->
                         <h4 class="card-title">Frielzekiel M. Nicolas</h4>
                         <!--Text-->
-                        <p class="card-text mb-4"><strong>“Whatever the mind of man can conceive and believe, it can be achieve.”</strong></p>
+                        <p class="card-text mb-4"><strong>“There are no secrets to success. It is the result of preparation, hard work, and from failure.”</strong></p>
                     </div>
 
                 </div>
@@ -356,7 +334,7 @@
                     <!--Title-->
                     <h4 class="card-title">Abdullah M. Kiram</h4>
                     <!--Text-->
-                    <p class="card-text mb-4"><strong>“Whatever the mind of man can conceive and believe, it can be achieve.”</strong></p>
+                    <p class="card-text mb-4"><strong>“Whenever you find yourself on the side of majority, it is time to pause and reflect.”</strong></p>
                 </div>
 
             </div>
@@ -377,7 +355,7 @@
                     <!--Title-->
                     <h4 class="card-title">Benrasheed M. Salim</h4>
                     <!--Text-->
-                    <p class="card-text mb-4"><strong>“Whatever the mind of man can conceive and believe, it can be achieve.”</strong></p>
+                    <p class="card-text mb-4"><strong>“Making money is art and working is art and good business is the best art.”</strong></p>
                 </div>
 
             </div>

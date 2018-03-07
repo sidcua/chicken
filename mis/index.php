@@ -94,11 +94,11 @@
         <div class="carousel-inner" role="listbox">
 
             <!-- First slide -->
-            <div class="carousel-item active view hm-black-light" style="background-image: url('https://mdbootstrap.com/img/Photos/Others/images/47.jpg'); background-repeat: no-repeat; background-size: cover;">
+            <div class="carousel-item active view hm-black-light" style="background-repeat: no-repeat; background-size: cover;"><img src="./img/misb.jpg" style="width:100%; height:100%; margin:auto; margin-top: -10px; object-fit: cover;">
                 <!-- Caption -->
                 <div class="full-bg-img flex-center white-text">
                     <ul class="animated fadeIn col-md-12">
-                        <li>
+                        <!-- <li>
                             <h1 class="h1-responsive font-bold">20 Photos to inspire you to visit Tatra Mountains</h1>
                         </li>
                         <li>
@@ -106,7 +106,7 @@
                         </li>
                         <li>
                             <a target="_blank" href="https://mdbootstrap.com/getting-started/" class="btn btn-outline-white" rel="nofollow">See more!</a>
-                        </li>
+                        </li> -->
                     </ul>
                 </div>
                 <!-- /.Caption -->
@@ -115,12 +115,12 @@
             <!--/.First slide-->
 
             <!-- Second slide -->
-            <div class="carousel-item view hm-black-light" style="background-image: url('https://mdbootstrap.com/img/Photos/Others/images/77.jpg'); background-repeat: no-repeat; background-size: cover;">
+            <div class="carousel-item view hm-black-light" style="background-repeat: no-repeat; background-size: cover;"><img src="./img/misb2.jpg" style="width:100%; height:100%; margin:auto; margin-top: -10px; object-fit: cover;">
 
                 <!-- Caption -->
                 <div class="full-bg-img flex-center white-text">
                     <ul class="animated fadeIn col-md-12">
-                        <li>
+                        <!-- <li>
                             <h1 class="h1-responsive font-bold">10 Reasons you should spend winter holiday in mountains </h1>
                         </li>
                         <li>
@@ -128,7 +128,7 @@
                         </li>
                         <li>
                             <a target="_blank" href="https://mdbootstrap.com/bootstrap-tutorial/" class="btn btn-outline-white" rel="nofollow">Read more</a>
-                        </li>
+                        </li> -->
                     </ul>
                 </div>
                 <!-- /.Caption -->
@@ -137,12 +137,12 @@
             <!--/.Second slide -->
 
             <!-- Third slide -->
-            <div class="carousel-item view hm-black-slight" style="background-image: url('https://mdbootstrap.com/img/Photos/Others/nature7.jpg'); background-repeat: no-repeat; background-size: cover;">
+            <div class="carousel-item view hm-black-slight" style="background-repeat: no-repeat; background-size: cover;"><img src="./img/misb3.jpg" style="width:100%; height:100%; margin:auto; margin-top: -10px; object-fit: cover;">
 
                 <!-- Caption -->
                 <div class="full-bg-img flex-center white-text">
                     <ul class="animated fadeIn col-md-12">
-                        <li>
+                        <!-- <li>
                             <h1 class="h1-responsive font-bold">Weekend in the nature - the best way to relax</h1>
                         </li>
                         <li>
@@ -150,7 +150,7 @@
                         </li>
                         <li>
                             <a target="_blank" href="https://mdbootstrap.com/forums/forum/support/" class="btn btn-outline-white" rel="nofollow">Read more</a>
-                        </li>
+                        </li> -->
                     </ul>
                 </div>
                 <!-- /.Caption -->
@@ -245,7 +245,7 @@
                     <!--Title-->
                     <h4 class="card-title">Mainframe computing</h4>
                     <!--Text-->
-                    <p class="card-text mb-4"><strong>Implemented using two or more central processing units CPU. The data storage capacity of these computers is very high.</strong></p>
+                    <p class="card-text mb-4"><strong>Referred to as "Big Iron". Implemented using two or more central processing units CPU. The data storage capacity of these computers is very high.</strong></p>
                 </div>
   
             </div>
