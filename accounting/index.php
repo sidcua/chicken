@@ -59,8 +59,44 @@
             <!--/.Controls-->
         </div>
 		<div class="container">
-			<div class="row">
-			</div>
+			<section class="section about mb-5" id="about">
+
+      <!-- Secion heading -->
+      <h1 class="text-center font-bold mt-5 pt-2 mb-3 dark-grey-text wow fadeIn" data-wow-delay="0.2s">
+          <em>About Accounting</em>
+      </h1>
+
+      <!-- Section description -->
+      <p class="text-center font-up font-bold grey-text mb-5 pb-4 wow fadeIn" data-wow-delay="0.2s"></p>
+
+      <!-- Grid row -->
+      <div class="row">
+
+          <!-- Column column -->
+          <div class="col-xl-5 mr-auto mb-r col-lg-6 wow fadeIn" data-wow-delay="0.4s">
+
+              <!-- Image -->
+              <img src="./img/image1.jpg" class="img-fluid rounded z-depth-1-half"
+                  alt="My photo">
+
+          </div>
+          <!-- Column column -->
+
+          <!-- Grid column column -->
+          <div class="col-xl-6 col-lg-6 wow fadeIn" data-wow-delay="0.4s">
+
+              <!-- Description -->
+              <p align="justify">Office supplies are consumables and equipment regularly used in offices by businesses and other organizations, by individuals engaged in written communications, recordkeeping or bookkeeping, janitorial and cleaning, and for storage of supplies or data. The range of items classified as office supplies varies, and typically includes small, expendable, daily use items, consumable products, small machines, higher cost equipment such as computers, as well as office furniture and art.</p>
+
+              <p align="justify">Office supplies are typically divided by type of product and general use.</p>
+
+          </div>
+          <!-- Grid column -->
+
+      </div>
+      <!-- Grid row -->
+
+  </section>
 		</div>
 		<?php include "view/footer.php"; ?>
 	</body>
