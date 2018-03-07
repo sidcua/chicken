@@ -11,7 +11,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>
-        
+        <?php
+            if($print == "supply"){
+                echo "Supply Items";
+            }
+            else if($print == "transaction"){
+                echo "Supply Transaction";
+            }
+            else if($print == "expense"){
+                echo "Expense";
+            }
+            else if($print == "emplist"){
+                echo "Employee List";
+            }
+            else if($print == "emphist"){
+                echo "Employee History";
+            }
+        ?>
     </title>
     <link rel="stylesheet" type="text/css" href="css/mdb/bootstrap.css" />
     <link rel="stylesheet" type="text/css" href="css/mdb/mdb.css" />

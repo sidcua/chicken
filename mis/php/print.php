@@ -115,11 +115,22 @@
         $output .= '</tbody></table>';
     }
     if($print == "emplist"){
-        $query = "SELECT name, position, username, office FROM account ORDER BY name ASC";
+        $emp = mysqli_escape_string($con, $_GET['emp']);
+        if($emp != "All"){
+            $office_lbl = $emp;
+            $emp = " WHERE office = '$emp'";
+            
+        }
+        else{
+            $emp = "";
+            $office_lbl = 'All';
+        }
+        $query = "SELECT name, position, username, office FROM account".$emp." ORDER BY name ASC";
         $result = mysqli_query($con, $query);
         $no = mysqli_num_rows($result);
         $output .= '<p class="h1-responsive text-center">Employee List</p><br><br><table class="table">
         <p class="h4-responsive text-left">Number of Employee: '.$no.'</p>
+        <p class="h4-responsive text-left">Office: '.$office_lbl.'</p>
         <thead class="blue-grey lighten-4">
             <tr>
                 <th>Name</th>
@@ -128,8 +139,6 @@
                 <th>Office</th>
             </tr>
         </thead><tbody>';
-        $query = "SELECT name, position, username, office FROM account ORDER BY name ASC";
-        $result = mysqli_query($con, $query);
         while($fetch = mysqli_fetch_assoc($result)){
             $name = $fetch['name'];
             $position = $fetch['position'];
@@ -156,7 +165,7 @@
         $query = "SELECT * FROM emphistory ORDER BY histID DESC";
         $result = mysqli_query($con, $query);
         while($fetch = mysqli_fetch_assoc($result)){
-            $name = $fetch['nane'];
+            $name = $fetch['name'];
             $reason = $fetch['reason'];
             $date = $fetch['date'];
             $status = $fetch['status'];

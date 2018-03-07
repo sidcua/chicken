@@ -50,9 +50,19 @@
 
     <div class="tab-content card">
             <!--Panel 1-->
+        
          <div class="tab-pane fade in show active" id="panel1" role="tabpanel">
              <div class="card col-md-12" style="background-color:#1F2739;"> 
                     <div class="d-flex justify-content-end">
+                        <div class="d-flex flex-row">
+                            <label for="slctemp" class="white-text" style="margin-right: 20px;">Print Employees</label>
+                            <select id="slctemp" class="form-control bg-white">
+                                <option value="All">All</option>
+                                <option value="Accounting">Accounting</option>
+                                <option value="HR">HR</option>
+                                <option value="Supply">Supply</option>
+                            </select>
+                        </div>
                     <button type="button" onclick="printemplist()" class="btn btn-outline-info waves-effect"><i class="fa fa-print" aria-hidden="true"></i> Print</button>
                 </div>
             <div class="card col-md-12" style="background-color:#1F2739;">
@@ -132,7 +142,8 @@
 </html>
 <script>
     function printemplist(){
-        window.open("print.php?print=emplist");
+        var emp = $("#slctemp").val();
+        window.open("print.php?print=emplist&emp=" + emp);
     }
     function printemphist(){
         window.open("print.php?print=emphist")
