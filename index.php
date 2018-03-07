@@ -21,7 +21,7 @@
 			<div class="row">
 				<div class="col-sm-2"></div>
 				<div class="col-sm-8">	
-					<p class="h1-responsive text-center white-text">Winner Winner Chicken Dinner</p>
+					<p class="h1-responsive text-center white-text">XYZ Corporation</p>
 			        <br>
 			        <div class="row">
 			        	<div class="col-sm-2"></div>
