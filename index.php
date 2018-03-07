@@ -14,32 +14,29 @@
 		<link rel="stylesheet" type="text/css" href="css/mdb.css" />
 		<link rel="stylesheet" type="text/css" href="css/font-awesome.css" />
 		<link rel="stylesheet" type="text/css" href="css/style.css" />
-		
-		
-		
 	</head>
 	<body>
 		<div class="container">
-			<div class="row"><br><br><br><br><br></div>
+			<div class="row"><br><br><br><br><br><br><br></div>
 			<div class="row">
 				<div class="col-sm-2"></div>
 				<div class="col-sm-8">	
-					<p class="h1-responsive text-center">Winner Winner Chicken Dinner</p>
+					<p class="h1-responsive text-center white-text">Winner Winner Chicken Dinner</p>
 			        <br>
 			        <div class="row">
 			        	<div class="col-sm-2"></div>
 			        	<div class="col-sm-8">
 			        		<p class="error" id="errormsglogin"></p>
 			        		<div class="md-form">
-						        <i class="fa fa-user prefix grey-text"></i>
-						        <input type="text" id="txtusername" class="form-control" onkeydown="if(event.keyCode == 13) login();">
-						        <label for="txtemail">Your email</label>
+						        <i class="fa fa-user prefix white-text"></i>
+						        <input type="text" id="txtusername" class="form-control white-text" onkeydown="if(event.keyCode == 13) login();">
+						        <label class="white-text" for="txtemail">Your email</label>
 						    </div>
 
 						    <div class="md-form">
-						        <i class="fa fa-lock prefix grey-text"></i>
-						        <input type="password" id="txtpassword" class="form-control" onkeydown="if(event.keyCode == 13) login();">
-						        <label for="txtpassword">Your password</label>
+						        <i class="fa fa-lock prefix white-text"></i>
+						        <input type="password" id="txtpassword" class="form-control white-text" onkeydown="if(event.keyCode == 13) login();">
+						        <label class="white-text" for="txtpassword">Your password</label>
 						    </div>
 			        	</div>
 			        	<div class="col-sm-2"></div>

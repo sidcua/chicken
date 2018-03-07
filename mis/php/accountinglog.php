@@ -1,6 +1,6 @@
 <?php  
 	session_start();
-	include "connect.php";
+	include "../../php/connect.php";
 	$action = $_POST['action'];
 
 	if($action == "listexpense"){

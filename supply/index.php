@@ -32,17 +32,17 @@
             <div class="carousel-inner" role="listbox">
                 <!--First slide-->
                 <div class="carousel-item active">
-                    <img class="d-block w-100" src="../hr/img/background1.jpg" alt="First slide">
+                    <img class="d-block w-100" src="img/slide1.jpg" alt="First slide">
                 </div>
                 <!--/First slide-->
                 <!--Second slide-->
                 <div class="carousel-item">
-                    <img class="d-block w-100" src="../hr/img/background1.jpg" alt="First slide">
+                    <img class="d-block w-100" src="img/slide2.jpg" alt="First slide">
                 </div>
                 <!--/Second slide-->
                 <!--Third slide-->
                 <div class="carousel-item">
-                    <img class="d-block w-100" src="../hr/img/background1.jpg" alt="First slide">
+                    <img class="d-block w-100" src="img/slide3.jpg" alt="First slide">
                 </div>
                 <!--/Third slide-->
             </div>
