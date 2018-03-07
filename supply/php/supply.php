@@ -3,7 +3,7 @@
 	include 'connect.php';
 	$action = $_POST['action'];
 	function trans($name, $transaction, $remark, $con){
-		$query = "INSERT INTO stock (item, transaction, remark, date) VALUES ('$name', '$transaction', '$remark')";
+		$query = "INSERT INTO stock (item, transaction, remark) VALUES ('$name', '$transaction', '$remark')";
 		mysqli_query($con, $query);
 	}
 	function expense($name, $price, $quantity, $con){
