@@ -184,11 +184,11 @@
 
             <!-- Secion heading -->
             <h1 class="text-center font-bold mt-5 pt-2 mb-3 dark-grey-text wow fadeIn" data-wow-delay="0.2s">
-                <em>About us</em>
+                <em>About Management Information System</em>
             </h1>
 
             <!-- Section description -->
-            <p class="text-center font-up font-bold grey-text mb-5 pb-4 wow fadeIn" data-wow-delay="0.2s">Tourism students with love to travel</p>
+            <p class="text-center font-up font-bold grey-text mb-5 pb-4 wow fadeIn" data-wow-delay="0.2s">Management Information System or Management Information Services</p>
 
             <!-- Grid row -->
             <div class="row">
@@ -197,7 +197,7 @@
                 <div class="col-xl-5 mr-auto mb-r col-lg-6 wow fadeIn" data-wow-delay="0.4s">
 
                     <!-- Image -->
-                    <img src="https://mdbootstrap.com/img/Photos/Others/images/53.jpg" class="img-fluid rounded z-depth-1-half"
+                    <img src="./img/mis.jpg"
                         alt="My photo">
 
                 </div>
@@ -207,16 +207,17 @@
                 <div class="col-xl-6 col-lg-6 wow fadeIn" data-wow-delay="0.4s">
 
                     <!-- Description -->
-                    <p align="justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo animi soluta ratione quisquam, dicta ab
-                        cupiditate iure eaque? Repellendus voluptatum, magni impedit eaque animi maxime.</p>
+                    <p align="justify">Management information systems, produce fixed, regularly scheduled reports based on data extracted and summarized from the firm's underlying transaction processing systems to middle and operational level managers to identify and inform semi-structured decision problems.</p>
 
-                    <p align="justify">Nemo animi soluta ratione quisquam, dicta ab cupiditate iure eaque? Repellendus voluptatum, magni impedit
-                        eaque delectus, beatae maxime temporibus maiores quibusdam quasi rem magnam.</p>
+                    <p align="justify">Management Information System evolution corresponding to the five phases in the development of computing technology:</p>
 
                     <ul>
-                        <li>Nemo animi soluta ratione</li>
-                        <li>Beatae maxime temporibus</li>
-                        <li>Consectetur adipisicing elit</li>
+                        <li>Mainframe computing.</li>
+                        <li>Minicomputer computing.</li>
+                        <li>Personal computers.</li>
+                        <li>Client/server networks.</li>
+                        <li>Enterprise computing.</li>
+                        <li>Cloud computing.</li>
                     </ul>
 
                 </div>
@@ -231,75 +232,134 @@
         <hr>
 
         <div class="row my-5 py-4">
-            <!--First columnn-->
-            <div class="col-lg-4">
-                <!--Card-->
-                <div class="card wow fadeIn" data-wow-delay="0.2s">
-
-                    <!--Card image-->
-                    <img class="img-fluid" src="https://mdbootstrap.com/img/Photos/Others/images/49.jpg" alt="Card image cap">
-
-                    <!--Card content-->
-                    <div class="card-body">
-                        <!--Title-->
-                        <h4 class="card-title">Mesmerizing Landscapes</h4>
-                        <!--Text-->
-                        <p class="card-text mb-4">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <a href="#" class="font-bold">Read more</a>
-                    </div>
-
+        <!--First columnn-->
+        <div class="col-lg-4">
+            <!--Card-->
+            <div class="card wow fadeIn" data-wow-delay="0.2s">
+  
+                <!--Card image-->
+                <img class="img-fluid" src="./img/mainframe.jpg" alt="Card image cap">
+  
+                <!--Card content-->
+                <div class="card-body">
+                    <!--Title-->
+                    <h4 class="card-title">Mainframe computing</h4>
+                    <!--Text-->
+                    <p class="card-text mb-4"><strong>Implemented using two or more central processing units CPU. The data storage capacity of these computers is very high.</strong></p>
                 </div>
-                <!--/.Card-->
+  
             </div>
-            <!--First columnn-->
-
-            <!--Second columnn-->
-            <div class="col-lg-4">
-                <!--Card-->
-                <div class="card wow fadeIn" data-wow-delay="0.4s">
-
-                    <!--Card image-->
-                    <img class="img-fluid" src="https://mdbootstrap.com/img/Photos/Others/images/48.jpg" alt="Card image cap">
-
-                    <!--Card content-->
-                    <div class="card-body">
-                        <!--Title-->
-                        <h4 class="card-title">Top 5 holiday's places</h4>
-                        <!--Text-->
-                        <p class="card-text mb-4">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <a href="#" class="font-bold">Read more</a>
-                    </div>
-
-                </div>
-                <!--/.Card-->
-
-            </div>
-            <!--Second columnn-->
-
-            <!--Third columnn-->
-            <div class="col-lg-4 mb-4">
-                <!--Card-->
-                <div class="card wow fadeIn" data-wow-delay="0.6s">
-
-                    <!--Card image-->
-                    <img class="img-fluid" src="https://mdbootstrap.com/img/Photos/Others/images/29.jpg" alt="Card image cap">
-
-                    <!--Card content-->
-                    <div class="card-body">
-                        <!--Title-->
-                        <h4 class="card-title">Mountain Rivers</h4>
-                        <!--Text-->
-                        <p class="card-text mb-4">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <a href="#" class="font-bold">Read more</a>
-                    </div>
-
-                </div>
-                <!--/.Card-->
-            </div>
-            <!--Third columnn-->
+            <!--/.Card-->
         </div>
+        <!--First columnn-->
+  
+        <!--Second columnn-->
+         <div class="col-lg-4">
+            <!--Card-->
+            <div class="card wow fadeIn" data-wow-delay="0.2s">
+  
+                <!--Card image-->
+                <img class="img-fluid" src="./img/minicomp.jpg" alt="Card image cap">
+  
+                <!--Card content-->
+                <div class="card-body">
+                    <!--Title-->
+                    <h4 class="card-title">Minicomputer computing</h4>
+                    <!--Text-->
+                    <p class="card-text mb-4"> <strong>Can be used by many operators simultaneously. High processing speed and high storage capacity than the microcomputers.</strong></p>
+                </div>
+  
+            </div>
+            <!--/.Card-->
+        </div>
+        <!--Second columnn-->
+  
+        <!--Third columnn-->
+        <div class="col-lg-4 mb-4">
+            <!--Card-->
+            <div class="card wow fadeIn" data-wow-delay="0.6s">
+  
+                <!--Card image-->
+                <img class="img-fluid" src="./img/computer.jpg" alt="Card image cap">
+  
+                <!--Card content-->
+                <div class="card-body">
+                    <!--Title-->
+                    <h4 class="card-title">Personal computers</h4>
+                    <!--Text-->
+                    <p class="card-text mb-4"><strong> a digital computer designed for use by only one person at a time. Is also a multi-purpose computer whose size, capabilities, and price make it feasible for individual use.</strong></p>
+                </div>
+  
+            </div>
+            <!--/.Card-->
+        </div>
+        <!--Third columnn-->
+  
+          <!--Fourth columnn-->
+          <div class="col-lg-4 mb-4">
+                  <!--Card-->
+                  <div class="card wow fadeIn" data-wow-delay="0.6s">
+  
+                      <!--Card image-->
+                      <img class="img-fluid" src="./img/client.png" alt="Card image cap">
+  
+                      <!--Card content-->
+                      <div class="card-body">
+                          <!--Title-->
+                          <h4 class="card-title">Client/server networks</h4>
+                          <!--Text-->
+                          <p class="card-text mb-4"><strong>A computer network in which one centralized, powerful computer is a hub to which many less powerful personal computers or workstations are connected.</strong></p>
+                      </div>
+  
+                  </div>
+                  <!--/.Card-->
+              </div>
+              <!--Fourth columnn-->      
+  
+                <!--Fifth columnn-->
+          <div class="col-lg-4 mb-4">
+              <!--Card-->
+              <div class="card wow fadeIn" data-wow-delay="0.6s">
+  
+                  <!--Card image-->
+                  <img class="img-fluid" src="./img/enterprise.png" alt="Card image cap">
+  
+                  <!--Card content-->
+                  <div class="card-body">
+                      <!--Title-->
+                      <h4 class="card-title">Enterprise computing</h4>
+                      <!--Text-->
+                      <p class="card-text mb-4"><strong>Enterprise computing is usually seen as a collection of big business software solutions to common problems such as resource management and streamlining processes.</strong></p>
+                  </div>
+  
+              </div>
+              <!--/.Card-->
+          </div>
+              <!--Fifth columnn-->
+  
+                <!--Sixth columnn-->
+          <div class="col-lg-4 mb-4">
+              <!--Card-->
+              <div class="card wow fadeIn" data-wow-delay="0.6s">
+  
+                  <!--Card image-->
+                  <img class="img-fluid" src="./img/cloud.jpg" alt="Card image cap">
+  
+                  <!--Card content-->
+                  <div class="card-body">
+                      <!--Title-->
+                      <h4 class="card-title">Cloud computing</h4>
+                      <!--Text-->
+                      <p class="card-text mb-4"><strong>The practice of using a network of remote servers hosted on the Internet to store, manage, and process data, rather than a local server or a personal computer.</strong></p>
+                  </div>
+  
+              </div>
+              <!--/.Card-->
+          </div>
+          <!--Sixth columnn-->
     </div>
-    <!--/.Content-->
+  </div>
+  <!--/.Content-->
 
     <?php include './view/footer.php'; ?>
 

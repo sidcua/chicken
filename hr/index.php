@@ -314,7 +314,7 @@
                   <!--Title-->
                   <h4 class="card-title">Sid Jeric C. Cua</h4>
                   <!--Text-->
-                  <p class="card-text mb-4"><strong>Some quick example text to build on the card title and make up the bulk of the card's content.</strong></p>
+                  <p class="card-text mb-4"><strong>“Whatever the mind of man can conceive and believe, it can be achieve.”</strong></p>
               </div>
 
           </div>
@@ -335,7 +335,7 @@
                         <!--Title-->
                         <h4 class="card-title">Frielzekiel M. Nicolas</h4>
                         <!--Text-->
-                        <p class="card-text mb-4"><strong>Some quick example text to build on the card title and make up the bulk of the card's content.</strong></p>
+                        <p class="card-text mb-4"><strong>“Whatever the mind of man can conceive and believe, it can be achieve.”</strong></p>
                     </div>
 
                 </div>
@@ -356,7 +356,7 @@
                     <!--Title-->
                     <h4 class="card-title">Abdullah M. Kiram</h4>
                     <!--Text-->
-                    <p class="card-text mb-4"><strong>Some quick example text to build on the card title and make up the bulk of the card's content.</strong></p>
+                    <p class="card-text mb-4"><strong>“Whatever the mind of man can conceive and believe, it can be achieve.”</strong></p>
                 </div>
 
             </div>
@@ -377,7 +377,7 @@
                     <!--Title-->
                     <h4 class="card-title">Benrasheed M. Salim</h4>
                     <!--Text-->
-                    <p class="card-text mb-4"><strong>Some quick example text to build on the card title and make up the bulk of the card's content.</strong></p>
+                    <p class="card-text mb-4"><strong>“Whatever the mind of man can conceive and believe, it can be achieve.”</strong></p>
                 </div>
 
             </div>

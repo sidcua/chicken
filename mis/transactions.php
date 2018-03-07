@@ -21,8 +21,12 @@
 <body ng-app="appMIS" ng-controller="ctrlMIS" ng-init="refresh();">
     <?php include './view/header.php'; ?>
     
-    <div class="col-md-5 offset-1">  
-        <strong><p class="h1-responsive" style="margin-top:20%;">Manage Transactions</p>
+    <div style="margin-top: 100px;"></div>
+    <div class="container">
+        <div class="jumbotron">
+            <h1 class="h1-responsive">Manage Transactions</h1>
+            <hr class="my-2">
+        </div>
     </div>
     <br>
     <div class="card col-md-12" style="background-color:#1F2739;">  
